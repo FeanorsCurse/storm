@@ -1,0 +1,45 @@
+<plugin name='richui' version='0.7' grailsVersion='1.2-M4 &gt; *'>
+  <author>Andreas Schmitt</author>
+  <authorEmail>andreas.schmitt.mi@gmail.com</authorEmail>
+  <title>Provides a set of AJAX components</title>
+  <description>
+Provides a set of AJAX components
+</description>
+  <documentation>http://grails.org/RichUI+Plugin</documentation>
+  <resources>
+    <resource>RichuiConfig</resource>
+    <resource>UrlMappings</resource>
+    <resource>FontImageController</resource>
+    <resource>FontImageService</resource>
+    <resource>AccordionTagLib</resource>
+    <resource>AutoCompleteTagLib</resource>
+    <resource>CalendarDayViewTagLib</resource>
+    <resource>CalendarMonthViewTagLib</resource>
+    <resource>CalendarWeekViewTagLib</resource>
+    <resource>CarouselTagLib</resource>
+    <resource>CheckedTreeViewTagLib</resource>
+    <resource>DateChooserTagLib</resource>
+    <resource>FlowTagLib</resource>
+    <resource>FontTagLib</resource>
+    <resource>GoogleMapsTagLib</resource>
+    <resource>LightBoxTagLib</resource>
+    <resource>MapTagLib</resource>
+    <resource>PortletTagLib</resource>
+    <resource>ProgressBarTagLib</resource>
+    <resource>RatingTagLib</resource>
+    <resource>ReflectionImageTagLib</resource>
+    <resource>RichTextEditorTagLib</resource>
+    <resource>RichUIResourceTagLib</resource>
+    <resource>RichUIUtilTagLib</resource>
+    <resource>SliderTagLib</resource>
+    <resource>TabViewTagLib</resource>
+    <resource>TagCloudTagLib</resource>
+    <resource>TimelineTagLib</resource>
+    <resource>TooltipTagLib</resource>
+    <resource>TreeViewTagLib</resource>
+  </resources>
+  <dependencies>
+    <resolvers />
+  </dependencies>
+  <behavior />
+</plugin>

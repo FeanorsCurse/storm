@@ -1,0 +1,1018 @@
+/* Gesamtbreite: 980 */
+	/* ######################################################################################################
+** # "Yet Another Multicolum Layout" (c) by Dirk Jesse (http://www.yaml.de) #############################
+** ######################################################################################################
+** 
+**  YAML Version: 2.5.1
+**  Dateiversion: 29.08.06  
+**  Datei       : base.css
+**  Funktion    : Basis-Stylesheet
+**
+**  Don't make any changes in this file! 
+**  Any changes should be placed in basemod-files in css/modifications directory.
+*/
+@import "content.css";
+
+@media all {
+	/* ######################################################################################################
+** ### Vorbereitende Ma�nahmen | Reset ##################################################################
+** ######################################################################################################
+*/
+	/* Hiermit werden die Randabst�nde und border aller HTML-Elemente auf Null gesetzt. Damit wird das       
+	** Aussehen der Webseite in unterschiedlichen Browsern vereinheitlicht. 
+	*/
+	* {
+		margin: 0;
+		padding: 0;
+		font-size: 100%;
+	}
+	/*
+	** Die nachfolgenden Angaben entstammen dem Artikel 'Useful Code Snippets' von Mike Foskett
+	** [http://www.websemantics.co.uk/tutorials/useful_css_snippets/]
+	*/
+	html {
+		height: 100%
+	}
+	body {
+		/* Vertikalen Scrollbalken im Netscape & Firefox erzwingen. Dies verhindert, dass zentrierte Layouts 
+	** um 10 Pixel springen wenn der Seiteninhalt kleiner wird als die H�he des Browserfensters. */
+		min-height: 101%;
+		/* Beseitigung des Rundungsfehlers bei Schriftgr��en im Opera sowie Standardformatierungen */
+		font-size: 100.01%;
+		/* FIX: Verhindert, dass positionierte Elemente nicht verschoben werden when die Gr��e des Browser 
+			Fensters ge�ndert wird. */
+		position: relative;
+		/* Vorgabe der Standardfarben und Textausrichtung*/
+		color: #000;
+		background: #fff;
+	}
+	
+	#articlecontent {
+	text-align: justify;
+	}
+	
+	/* Standardrahmen zur�cksetzen */
+	fieldset,img {
+		border: 0;
+	}
+	/* Anpassung f�r Safari Browser. font-size:100% ist f�r den Safari in Formularen zu gro� */
+	select,input,textarea {
+		font-size: 99%
+	}
+	/* ######################################################################################################
+** ### DIV-Container des Basislayouts ###################################################################
+** ######################################################################################################
+*/
+	#header {
+		position: relative;
+	}
+	#topnav {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		color: #fff;
+		background: transparent;
+		text-align: right;
+		/* Erforderlich, damit im Opera 6 wirklich rechts plaziert ! */
+	}
+	#nav {
+		clear: both;
+		width: auto;
+		z-index: 100;
+	}
+	#main {
+		clear: both;
+		width: auto;
+	}
+	#col1 {
+		float: left;
+		width: 200px;
+		/* Standard-Wert, falls keine anderen Vorgaben gemacht werden */
+	}
+	#col2 {
+		float: right;
+		width: 200px;
+		/* Standard-Wert, falls keine anderen Vorgaben gemacht werden */
+	}
+	#col3 {
+		width: auto;
+		margin-left: 200px;
+		/* Standard-Wert, falls keine anderen Vorgaben gemacht werden */
+		margin-right: 200px;
+		/* Standard-Wert, falls keine anderen Vorgaben gemacht werden */
+	}
+	#footer {
+		clear: both;
+	} /* Backup f�r IE-Clearing */
+	/* Der z-Index verhindert, dass im Falle des noch bestehenden IE-Bugs die Texte vor 
+	** dem Spaltenhintergrund erscheinen. */
+	#col1 {
+		z-index: 3;
+	}
+	#col2 {
+		z-index: 5;
+	}
+	#col3 {
+		z-index: 1;
+	}
+	#col1_content {
+		z-index: 4;
+	}
+	#col2_content {
+		z-index: 6;
+	}
+	#col3_content {
+		z-index: 2;
+	}
+	#col1_content,#col2_content,#col3_content {
+		position: relative;
+	}
+	/* ######################################################################################################
+** ### Markupfreie CSS-Floatclearing-L�sungen ###########################################################
+** ######################################################################################################
+*/ /* Clearfix-Methode zum Clearen der Float-Umgebungen */
+	.clearfix:after {
+		content: ".";
+		display: block;
+		height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+	/* Diese Angabe ben�tigt der Safari-Browser zwingend !! */
+	.clearfix {
+		display: block;
+	}
+	/* Overflow-Methode zum Clearen der Float-Umgebungen */
+	.floatbox {
+		overflow: hidden;
+	}
+	/* IE-Clearing: Ben�tigt nur der Internet Explorer und �ber iehacks.css zugeschaltet */
+	#ie_clearing {
+		display: none
+	}
+	/* ######################################################################################################
+** ### IE-Clearing bis YAML V2.4 ########################################################################
+** ######################################################################################################
+**
+** Die CSS-Definition des IE-Clearings, welches bis YAML 2.4 verwendet wurde, ist aus Gr�nden der 
+** Abw�rtskompatibilit�t des Basis-Stylesheets weiterhin enthalten.
+*/ /* Clearen der 3 Inhaltsspalten mittels dieses speziellen hr-Tags */
+	hr.clear_columns {
+		clear: both;
+		float: left;
+		content: ".";
+		display: block;
+		height: 0;
+		line-height: 0px;
+		visibility: hidden;
+		border: 0;
+		padding: 0;
+		margin: -1.1em 0 0 0;
+		/* erforderlich damit kein Leerraum zwischen Spalten und Footer entsteht */
+	}
+	/* ######################################################################################################
+** ### Subtemplates #####################################################################################
+** ######################################################################################################
+*/
+	.subcolumns {
+		width: 100%;
+		padding: 0 1px 0 1px;
+		margin: 0 -1px 0 -1px;
+		overflow: hidden;
+	}
+	.c50l,.c25l,.c33l,.c38l,.c66l,.c75l,.c62l {
+		float: left;
+		overflow: hidden;
+	}
+	.c50r,.c25r,.c33r,.c38r,.c66r,.c75r,.c62r {
+		float: right;
+		overflow: hidden;
+	}
+	.c25l,.c25r {
+		width: 24.999%;
+	}
+	.c33l,.c33r {
+		width: 33.333%;
+	}
+	.c50l,.c50r {
+		width: 49.999%;
+	}
+	.c66l,.c66r {
+		width: 66.666%;
+	}
+	.c75l,.c75r {
+		width: 74.999%;
+	}
+	.c38l,.c38r {
+		width: 38.196%;
+	} /* Goldener Schnitt */
+	.c62l,.c62r {
+		width: 61.803%;
+	} /* Goldener Schnitt */
+	.subc {
+		padding: 0 0.5em 0 0.5em;
+		overflow: hidden;
+	}
+	.subcl {
+		padding: 0 1em 0 0;
+		overflow: hidden;
+	}
+	.subcr {
+		padding: 0 0 0 1em;
+		overflow: hidden;
+	}
+}
+
+/* ######################################################################################################
+** ### Skiplink-Navigation ##############################################################################
+** ######################################################################################################
+*/
+@media screen , print {
+	.skip {
+		position: absolute;
+		left: -1000em;
+		width: 20em;
+	}
+}
+
+/* ######################################################################################################
+** # "Yet Another Multicolum Layout" (c) by Dirk Jesse (http://www.yaml.de) #############################
+** ######################################################################################################
+** 
+**  YAML Version: 2.5.1
+**  Dateiversion: 27.08.06  
+**  Datei       : basemod_simple.css
+**  Funktion    : Basis-Modifikation f�r Browsertests
+**
+*/
+@media all { /* Formatierung der Seite */
+	body {
+		padding: 0px;
+		font-family: Arial, Helvetica, sans-serif;
+		/*background:url(http://www.uni-oldenburg.de/img/layout/body-hg.php?gesamtbreite=980) 190px 0 repeat-y #E6EBDE;*/
+		background: #FFFFFF;
+	}
+	/*
+.hold_floats {
+	background:url(http://www.uni-oldenburg.de/img/layout/body-hg.gif) 190px 0 repeat-y #E6EBDE;
+}
+*/
+	/* Hier kann ein umlaufender Rand um die gesamte Webseite erzeugt werden */
+	#page {
+		border: 0px #ccc solid;
+	}
+	#page_margins {
+		border: 0px #eee solid;
+		min-width: 640px;
+		max-width: 980px;
+	}
+	#page_margins2 {
+		background: url(../../images/templates/uniol/kopf-hg.gif) 0
+			-5px no-repeat transparent;
+	}
+	#page_margins3 { background:url(../../images/templates/uniol/body-hg.php) 190px 0 repeat-y transparent;}
+	/* Formatierung der Kopfbereiches */
+	#header {
+		position: relative;
+		height: 71px;
+	}
+	#nav {
+		display: none;
+		color: #fff;
+		background: #888;
+		padding: 1em;
+	}
+	/* Formatierung der Fu�zeile */
+	#footer {
+		padding-right: 0;
+	}
+	/* ######################################################################################################
+** ### Formatierung der Inhaltsspalten ##################################################################
+** ######################################################################################################
+*/
+	#main {
+		color: #000;
+		background: transparent;
+		margin: 0;
+		padding: 0;
+		padding-top: 18px;
+	}
+	/* linke Spalte */
+	#col1 {
+		width: 190px;
+		margin: 0;
+		margin-top: 0;
+	}
+	#col1_content {
+		background: inherit;
+	}
+	/* Rechte Spalte */
+	#col2 {
+		width: 0%;
+	}
+	#col2_content {
+		padding-top: 1.5em;
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+	/* Mittlere Spalte */
+	#col3 {
+		margin-left: 190px;
+		margin-right: 0%;
+		border-left: 0px dotted #ddd;
+		border-right: 0px dotted #ddd;
+		padding-bottom: 800px;
+	}
+	#col3_content {
+		margin-left: 35px;
+		margin-right: 35px;
+	}
+	/* ######################################################################################################
+** ### Farbschema f�r Browsertests ######################################################################
+** ######################################################################################################
+*/
+	#col1 {
+		background: transparent;
+	}
+	#col1_content {
+		background: transparent;
+	}
+	#col2 {
+		background: transparent;
+	}
+	#col2_content {
+		background: transparent;
+	}
+	#col3 {
+		background: #fff;
+	}
+	#col3_content {
+		background: transparent;
+	}
+	#main {
+		background: transparent;
+	}
+}
+
+/* ######################################################################################################
+** # "Yet Another Multicolum Layout" (c) by Dirk Jesse (http://www.yaml.de) #############################
+** ######################################################################################################
+** 
+**  YAML Version: 2.5.1
+**  Dateiversion: 27.08.06  
+**  Datei       : basemod_1-3-2.css
+**  Funktion    : Variation des Basislayouts - Spaltenanordnung: 1-3-2
+**
+*/
+@media screen { /* #col1 wird zur linken Spalte */
+	#col1 {
+		width: 190px;
+	}
+	/* #col2 wird zur rechten Spalte */
+	#col2 {
+		width: 10px;
+	}
+	/* #col3 wird zur mittleren Spalte */
+	#col3 {
+		margin-left: 190px;
+		margin-right: 10px;
+	}
+}
+
+/***************************************
+ * Inhalt-Styles
+ ***************************************/
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	line-height: 130%;
+}
+
+#inhalt {
+	font-family: Arial, Verdana, Sans-Serif;
+	font-size: 13px;
+}
+
+/* h1, h2 */
+h1,.h1 {
+	display: block;
+	font-size: 1.4em;
+	font-weight: 400;
+	line-height: 110%;
+	margin: 0 0 1em 0;
+	padding: 0 0 0 0;
+	color: #2b4b6f !important;
+	color: #222847;
+}
+
+h2 {
+	display: block;
+	font-size: 1.3em;
+	font-weight: 400;
+	line-height: 110%;
+	margin: 0 0 1em 0;
+	padding: 0 0 0 0;
+	color: #2b4b6f !important;
+	color: #222847;
+}
+
+p+h1,ul+h1 {
+	margin-top: 1em;
+}
+
+/* h3 */
+h3,.h3 {
+	display: block;
+	font-size: 1.2em;
+	font-weight: 700;
+	margin: 0 0 0.5em 0;
+	padding: 0.4em 0;
+	color: #235181;
+	color: #2b4b6f !important;
+}
+
+h1+h3,p+h3,ul+h3,.rahmen+h3,.rahmen-u+h3 {
+	margin-top: 1em;
+}
+
+h3:first-child {
+	margin-top: 0;
+	padding-top: 0;
+}
+
+h3:last-child {
+	margin-bottom: 0;
+}
+
+/* is.informatik: */
+div.csc-header>h3:first-child {
+	padding-top: 1em;
+}
+
+/* h4 */
+h4,.h4 {
+	font-size: 1.0em;
+	margin: 1.2em 0 0.2em 0;
+	font-weight: 600;
+	color: #0C519B;
+	color: #235181;
+	color: #2C345C;
+	color: #2b4b6f !important;
+}
+
+div>h4:first-child {
+	margin-top: 0;
+	padding-top: 0;
+}
+
+h3+div,ul+div {
+	margin-top: 1em;
+}
+
+/* iframe */
+iframe {
+	margin-top: 1em;
+}
+
+/* p */
+p {
+	margin-top: 0;
+	margin-bottom: 0.6em;
+	padding-top: 0;
+	padding-bottom: 0.3em;
+	line-height: 130%;
+}
+
+p+p {
+	margin-top: 0.5em;
+}
+
+ul+p,ol+p,.rahmen+p,.rahmen-u+p {
+	margin-top: 0.5em;
+}
+
+h1+p,h3+p {
+	margin-top: 1em;
+}
+
+/* a, b */
+a {
+	color: #000000;
+}
+
+a:link,a:visited {
+	color: #0716d7;
+	color: #0000aa;
+	text-decoration: none;
+}
+
+a:hover,a:focus {
+	color: #071697;
+	text-decoration: underline;
+	/* border-bottom:1px solid #0716d7; */
+}
+
+b,strong {
+	color: /*#2D5075 */ #2b4b6f;
+}
+
+/* temp */
+h1+strong {
+	display: block;
+	margin-top: 2em;
+}
+
+a:link b,a:visited b,a:link strong,a:visited strong {
+	color: #0000aa;
+	text-decoration: none;
+}
+
+a:link:hover,a:link:hover strong {
+	color: #0000aa;
+	text-decoration: underline;
+}
+
+/* sup, sub */
+sup,sub {
+	font-size: 0.7em;
+}
+
+@media all {
+	/****************************************************************/
+	/* HINTERGR�NDE */
+	/****************************************************************/
+	.hg-grau {
+		background-color: #e0e0e0;
+		padding: 10px;
+		margin-top: 20px;
+		margin-bottom: 0;
+		width: 590px;
+		border: 2px solid #c0c0c0;
+		border-bottom-width: 0;
+	}
+	div.farbe_hintergrund,p.farbe_hintergrund {
+		background-color: #e7eadd !important;
+	}
+}
+
+
+.unsichtbar {
+	display: none;
+}
+
+/*******************************************************
+ * Titelbereiche
+ *******************************************************/
+#uni-titel {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 380px;
+	height: 80px;
+	background: url(../../images/templates/uniol/logo.gif)
+		no-repeat 52.5% 2px;
+	text-indent: -9999px;
+	margin: 0;
+	padding: 0;
+	display: block;
+	z-index: 50;
+}
+
+/*******************************************************
+ * Men�
+ *******************************************************/ 
+
+#menue {
+	font-size: 11px;
+	/* font-size: 0.846em; id="navibutton" */
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#menue ul,#menue ul li ul,#menue ul li ul li ul,#menue ul li.offen ul {
+	margin: 0px 0px;
+	padding: 0px 0px;
+	list-style: none;
+}
+
+#menue ul li,#menue ul li.offen,#menue #menuetitel {
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid white;
+	color: #444444;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+#menue ul li,#menue ul li.offen {
+	display: block;
+	padding: 0;
+	margin: 0;
+	float: none;
+}
+
+#menue ul li.active { /* background-color:#c9c9c9; */
+	
+}
+
+/* Navi-Eintr�ge 1. Ebene (Hauptebene) */
+#menue li a,#menue #menuetitel a {
+	color: #2E2E2E;
+	color: #0D599B;
+	color: #0C4F8A;
+	color: #0B4B83;
+	margin: 0;
+	display: block;
+	padding: 3px 0px 3px 20px;
+	text-decoration: none;
+	width: 170px;
+}
+
+#menue #menuetitel a {
+	padding: 4px 0px 4px 20px;
+}
+
+#menue a.active,#menue li.current-cat a {
+	background-color: #c9c9c9;
+	background-color: #87C130;
+	background-color: #7DBB2A;
+	background-color: #99C85B;
+	color: #000;
+}
+
+#menue li li a.active { 
+	background-color: #fff !important;
+	background: url(../../images/templates/uniol/pfeil-gruen.gif)
+		8px 6px no-repeat #fff;
+}
+
+#menue li ul li {
+	margin: 0;
+	padding: 0;
+	/* line-height:1.1em; */
+	border-bottom-width: 0;
+	text-transform: none;
+	font-weight: 600;
+}
+
+/* Navi-Eintr�ge 2. Ebene */
+#menue li ul li a {
+	padding: 4px 0 4px 20px;
+	border: none;
+	margin: 0;
+	line-height: 1em;
+	width: 170px;
+	font-size: 1em;
+}
+
+#menue li ul li ul li {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+/* Navi-Eintr�ge 3. Ebene */
+#menue li ul li ul li a {
+	padding: 3px 0 3px 30px;
+	border: none;
+	font-size: 1em;
+	font-weight: 500;
+	width: 160px
+}
+
+/* Navi-Eintr�ge 4. Ebene */
+#menue li ul li ul li ul li {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#menue li ul li ul li ul li a {
+	font-size: 1em;
+	padding: 3px 0 3px 40px;
+	border: none;
+	font-weight: 500;
+	width: 150px
+}
+
+/* Navi-Eintr�ge 4. Ebene */
+#menue li ul li ul li ul li ul li a {
+	font-size: 1em;
+	padding: 3px 0 3px 50px;
+	border: none;
+	font-weight: 500;
+	width: 140px
+}
+
+#menue li ul li ul li ul li ul li ul li a {
+	font-size: 1em;
+	padding: 3px 0 3px 60px;
+	border: none;
+	font-weight: 500;
+	width: 130px
+}
+
+#menue a.active {
+	background-image:
+		url(../../images/templates/uniol/pfeil-blau.gif);
+	background-repeat: no-repeat;
+	background-position: 13px 5px;
+}
+
+#menue li ul li a.active {
+	background-image:
+		url(../../images/templates/uniol/pfeil-blau9.gif);
+	background-image: none;
+	background-repeat: no-repeat;
+	background-position: 10px 6px;
+}
+
+#menue li ul li ul li a.active {
+	background-position: 21px 5px;
+}
+
+#menue li ul li ul li ul li a.active {
+	background-position: 31px 5px;
+}
+
+#menue-fuss {
+	display: none;
+}
+
+#menue .offen,#menue .open {
+	background-color: #C6E29C;
+	background-color: #CDEAA2;
+	background-color: #D7EAA2;
+	background-color: #D1E2B9;
+	background-color: #D0E1B8;
+}
+
+#menue .open a {
+	background-color: #99C85B;
+	color: #000;
+}
+
+#menue .open li a {
+	background-color: #D0E1B8;
+	color: #0B4B83;
+}
+
+#menue a:hover,#menue #menuetitel a:hover {
+	background-color: #87C130;
+	background-color: #7DBB2A;
+	background-color: #99C85B;
+	color: #000 !important;
+}
+
+#menue li li a:hover {
+	background-color: #87C130;
+	background-color: #7DBB2A;
+	background-color: #99C85B;
+	background-color: #fff !important;
+	/* color:#000 !important; */
+}
+
+#menue ul {
+	list-style-image: none !important;
+}
+
+
+
+@media screen {
+	#footer {
+		position: static;
+		bottom: 0;
+		z-index: 1000;
+		width: 980px;
+		padding-right: 0px;
+	}
+}
+
+@media only screen and (max-device-width: 480px) {
+	#footer {
+		position: static;
+	}
+}
+
+
+.unsichtbar,.siesindhier,#menue ul li.unsichtbar {
+	display: none;
+}
+
+
+#page_margins3 {
+	margin-left: auto !important;
+	margin-right: auto !important;
+	padding-right: 0px !important;
+	max-width: 970px;
+	width: 970px;
+	position: relative;
+}
+
+#footer {
+	width: 970px;
+	position: fixed;
+	padding: 0;
+	margin: 0;
+	bottom: 0;
+	z-index: 1000;
+	padding-right: 0px;
+	background: #E4EBD8;
+	opacity: 0.8;
+}
+
+#footer:hover {
+	opacity: 1;
+}
+
+@media only screen and (max-device-width: 480px) {
+	#footer {
+		position: static;
+	}
+}
+
+#header {
+	width: 970px;
+}
+
+#inhaltinfos {
+	width: 960px !important;
+}
+
+body {
+	height: 100%;
+	background-color: rgb(202, 205, 196) !important;
+	background-color: rgb(203, 215, 210) !important;
+	background-color: #B8C4BF !important;
+	background-color: #d4d9cd !important;
+	background-color: #fff !important;
+	background: url('../../images/templates/uniol/hg-verlauf.gif')
+		0 71px repeat-x #fff !important;
+	background: url('../../images/templates/uniol/layout/hg-verlauf.gif')
+		0 0px repeat-x #fff !important;
+	background-attachment: fixed !important;
+	padding: 0px 0 0 0 !important;
+}
+
+#col3 {
+	padding-bottom: 20px !important;
+	margin-right: 0;
+}
+
+#bereich-titel {
+	margin-right: 26px;
+}
+
+#inhalt>h1,#inhalt>h2,#inhalt>h3,#inhalt>h4 {
+	max-width: 520px;
+}
+
+#inhalt>p,#inhalt>ol,#inhalt>ul {
+	max-width: 600px;
+}
+
+.linkespalte {
+	clear: right;
+	width: 63.5%;
+	float: left;
+}
+
+.rechtespalte {
+	margin-left: 67%;
+}
+
+body {
+	height: auto;
+	min-height: 100%;
+}
+
+#page_margins4 {
+	background:
+		url('../../images/templates/uniol/seiten-hg-grau.png') 50%
+		0% repeat-y !important;
+	min-height: 100% !important;
+	/*height:100%;*/
+	margin-bottom: 0px !important;
+	overflow: hidden;
+}
+
+#page_margins3 { 
+	background:
+		url('../../images/templates/uniol/hg-verlauf190i.gif') 0
+		253px no-repeat #fff !important;
+	min-height: 1000px;
+}
+
+
+	/* ######################################################################################################
+** # "Yet Another Multicolum Layout" (c) by Dirk Jesse (http://www.yaml.de) #############################
+** ######################################################################################################
+** 
+**  YAML Version: 2.5.1
+**  Dateiversion: 27.08.06  
+**  Datei       : print_003.css
+**  Funktion    : Druck-Stylesheet - druckt die Spalte #col3
+**
+*/
+@media print {
+	body * {
+		font-size: 12pt;
+		font-family: Arial, Helvetica, Sans-Serif;
+	}
+	body {
+		background-image: none;
+		background-color: #fff;
+	}
+	blockquote {
+		font-family: Arial, Helvetica, Sans-Serif;
+	}
+	code.css,code.xhtml,em.file {
+		font-family: "Courier New", Courier, mono;
+	}
+	 /* Umformatierung der Layoutboxen */
+	body {
+		margin: 0;
+		padding: 0;
+	}
+	#page_margins4,#page_margins3,#page_margins2,#page_margins,#page {
+		position: static; ,
+		overflow: visible;
+	}
+	#page_margins,#page {
+		min-width: inherit;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		overflow: visible;
+	}
+	#topnav {
+		display: none;
+	}
+	#header {
+		height: auto;
+		display: none;
+	}
+	#header img {
+		position: relative;
+		top: 0;
+		left: 0;
+		padding: 0;
+	}
+	#nav_main {
+		display: none;
+	}
+	#teaser {
+		margin: 1em 0 0 0;
+		padding: 0;
+		border: 0;
+	}
+	#main {
+		margin: 0;
+		padding: 0;
+		position: static;
+		height: auto;
+		overflow: visible;
+	}
+	#inhalt,.floatbox {
+		position: static;
+		float: none;
+		height: auto;
+		overflow: visible;
+	}
+	#inhalt p {
+		width: auto;
+	}
+	#col1 {
+		display: none;
+	}
+	#col1_content {
+		display: none;
+	}
+	#col2 {
+		display: none;
+	}
+	#col2_content {
+		display: none;
+	}
+	#col3 {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		position: static;
+		height: auto;
+		overflow: visible;
+	}
+	#col3_content {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		height: auto;
+		overflow: visible;
+	}
+	#footer {
+		display: none;
+	}
+	.floatbox {
+		overflow: visible;
+	}
+}

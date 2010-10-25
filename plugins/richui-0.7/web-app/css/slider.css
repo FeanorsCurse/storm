@@ -1,0 +1,18 @@
+#slider-bg-horizontal {
+    position: relative;
+    background:url('../images/bg-fader-horizontal.gif') 5px 0 no-repeat;
+    height:28px;
+    width:220px; 
+}
+
+#slider-bg-horizontal-tickmarks {
+    position: relative;
+    background:url('../images/bg-fader-horizontal-tickmarks.gif') 5px 0 no-repeat;
+    height:28px;
+    width:220px; 
+}
+
+#slider-thumb {
+    position: absolute;
+    top: 4px;
+}

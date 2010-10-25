@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="www.storm.uni-oldenburg.de"
+    targetNamespace="www.storm.uni-oldenburg.de">
+
+    <xs:include schemaLocation="tnode.xsd"/>
+    <xs:element name="treport" type="treport"/>
+    <xs:complexType name="treport">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="description" type="xs:string"/>
+            <xs:element name="source" type="xs:anyURI"/>
+            <xs:choice>
+                <xs:element name="root" type="tnode"/>
+                <xs:element name="query" type="xs:anyURI"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

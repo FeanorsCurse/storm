@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FLV Flash Fullscreen Video Player</title>
+
+<link rel="stylesheet" type="text/css" href="http://www.video-flash.de/wp-content/uploads/2008/01/style.css"/>
+<link rel="stylesheet" type="text/css" href="playlist-style.css"/>   
+	
+<script type="text/javascript" src="../flvplayer/swfobject.js"></script>
+
+<script type="text/javascript">
+	var playervars = {    
+		contentpath: "../flvplayer/content",
+		video: "demo-video.flv",
+		preview: "demo-preview.jpg",							
+	    skin: "skin-applestyle.swf",
+		skincolor: "0x2c8cbd"
+		// ...
+		//see documentation for all the parameters		
+	};	
+  			
+		var params = { scale: "noscale", allowfullscreen: "true", salign: "tl", bgcolor: "#ffffff", base: "."};  	
+		var attributes = { align: "left" };
+		
+	swfobject.embedSWF("../flvplayer/flvplayer.swf", "videoCanvas", "500", "450", "9.0.28", "../flvplayer/expressInstall.swf", playervars, params, attributes);
+         
+		// Playlist
+
+		window.onload = function() {     
+					document.getElementById("video1").onclick = function() {  		
+						var player = swfobject.getObjectById("videoCanvas");  													    
+  						playervars.video = "demo-video.flv";
+						playervars.skincolor = "0x2c8cbd" ,
+ 						player.updatePlayer(playervars);					
+					}; 
+					document.getElementById("video2").onclick = function() {  		
+						var player = swfobject.getObjectById("videoCanvas");  													    
+  						playervars.video = "demo-ad.flv";
+						playervars.autoplay = "true";
+						playervars.skincolor = "0x009900" ,
+ 						player.updatePlayer(playervars);					
+					};
+					document.getElementById("video3").onclick = function() {  		
+						var player = swfobject.getObjectById("videoCanvas");  													    
+  						playervars.video = "demo-video.mp4";
+ 						playervars.preview = "";
+						playervars.autoplay = "false";
+						playervars.skincolor = "0xFF0000" ,
+ 						player.updatePlayer(playervars);					
+					};										  
+			
+				};
+		
+	</script>
+
+</head>
+
+<body>
+
+<div id="wrap" style="height:1000px"><!--grid container-->
+	
+	<h1>FLV Flash Fullscreen Video Player</h1>
+	<hr/>	
+	<h2>FLV Player Demo</h2>   
+	<h3>JavaScript Playlist</h3>	            
+	<p>This examples shows how to create a playlist in JavaScript.</p>
+     
+    <p style="color:red">Important: This features doesn't work locally (security reasons). Either, upload it on a web server or put the folder with the FLV Player into a trusted zone (<a href="http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager04.html" title="Adobe - Flash Player : Settings Manager - Global Security Settings panel">link</a>).</p>
+
+	<div>
+
+	<table id="playlist" summary="Video Playlist">
+	<thead>
+	<tr>
+	<th scope="col">Title</th>
+	<th scope="col">Description</th>
+	<th scope="col">Duration</th>
+	<th scope="col"></th>
+	</tr>
+	</thead>    
+	
+	<tfoot>
+	<tr>
+	<td colspan="5"><em>FLV Flash Fullscreen Video Player</em></td>
+	</tr>
+	</tfoot>
+	
+	<tbody>
+	<tr id="video1">
+	<td>Video Number One</td>
+	<td>This is the first video.</td>
+	<td>01:30</td>  
+	<td><button>Play</button></td>
+	</tr>
+	<tr id="video2">
+	<td>Video Number Two</td>
+	<td>This is the second video.</td>
+	<td>01:30</td>  
+	<td><button>Play</button></td>   	
+	</tr>
+	<tr id="video3">
+	<td>Video Number Three</td>
+	<td>This is the third video.</td>
+	<td>01:30</td>  
+	<td><button>Play</button></td>   	
+	</tr>
+	</tbody>
+	</table>
+    </div>
+
+	
+	<div id="videoCanvas" style="margin:0px">
+	
+	    <p>This content requires the Adobe Flash Player.</p>
+
+		<p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a>
+	    </p>
+
+	</div>
+
+	<!-- Footer -->
+	<div id="footnotes" style="clear:both">
+		<p><a href="http://www.video-flash.de/" title="www.video-flash.de">www.video-flash.de</a>, Florian Plag</p>
+	</div>
+
+</div><!--end grid container-->
+
+</body>
+</html>

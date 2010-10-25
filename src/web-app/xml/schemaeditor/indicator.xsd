@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="www.storm.uni-oldenburg.de"
+    targetNamespace="www.storm.uni-oldenburg.de">
+    <xs:include schemaLocation="category.xsd"/>
+    <xs:element name="indicator" type="indicator"/>
+    <xs:complexType name="indicator">
+        <xs:sequence>
+            <xs:element name="shortName" type="xs:string"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="description" type="xs:string"/>
+            <xs:element name="compilation" type="xs:string"/>
+            <xs:element name="reference" type="xs:string"/>
+            <xs:element name="relevance" type="xs:string"/>
+            <xs:element name="documentation" type="xs:string"/>
+            <xs:element name="definition" type="xs:string"/>
+            <xs:element name="category" type="category"/>
+            <xs:element name="source" type="xs:anyURI" form="unqualified" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="creationDate" type="xs:date" use="optional"/>
+        <xs:attribute name="lastNModified" type="xs:date" use="optional"/>
+        <xs:attribute name="value" type="xs:int"/>
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+    </xs:complexType>
+</xs:schema>

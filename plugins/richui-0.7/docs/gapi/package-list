@@ -1,0 +1,11 @@
+DefaultPackage
+grails-app.conf
+grails-app.controllers
+grails-app.services
+grails-app.taglib
+scripts
+src.groovy.de.andreasschmitt.richui.image
+src.groovy.de.andreasschmitt.richui.taglib
+src.groovy.de.andreasschmitt.richui.taglib.renderer
+test.integration
+test.unit

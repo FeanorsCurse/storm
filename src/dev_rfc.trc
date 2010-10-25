@@ -1,0 +1,128 @@
+
+**** ERROR file opened at 20100630 091648 Westeuropäische Normalzeit, SAP-REL 720,0,39 RFC-VER 3  MT-SL
+T:1068 Error in program 'javaw': ======> SAP_CMINIT3 : rc=20 > Connect to SAP gateway failed
+Connect_PM  GWHOST=m22z.hcc.uni-magdeburg.de, GWSERV=sapgw22, SYSNR=22
+
+LOCATION    CPIC (TCP/IP) on local host
+ERROR       partner 'm22z.hcc.uni-magdeburg.de:3322' not reached
+TIME        Wed Jun 30 09:16:48 2010
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3255
+DETAIL      NiPConnect2: 141.44.38.144:3322
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     1
+
+
+**** ERROR file opened at 20100630 094411 Westeuropäische Normalzeit, SAP-REL 720,0,39 RFC-VER 3  MT-SL
+T:2020 Error in program 'javaw': ======> SAP_CMINIT3 : rc=20 > Connect to SAP gateway failed
+Connect_PM  GWHOST=m22z.hcc.uni-magdeburg.de, GWSERV=sapgw22, SYSNR=22
+
+LOCATION    CPIC (TCP/IP) on local host
+ERROR       partner 'm22z.hcc.uni-magdeburg.de:3322' not reached
+TIME        Wed Jun 30 09:44:11 2010
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3255
+DETAIL      NiPConnect2: 141.44.38.144:3322
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     1
+
+
+**** ERROR file opened at 20100630 094515 Westeuropäische Normalzeit, SAP-REL 720,0,39 RFC-VER 3  MT-SL
+T:2032 Error in program 'javaw': ======> SAP_CMINIT3 : rc=20 > Connect to SAP gateway failed
+Connect_PM  GWHOST=m22z.hcc.uni-magdeburg.de, GWSERV=sapgw22, SYSNR=22
+
+LOCATION    CPIC (TCP/IP) on local host
+ERROR       partner 'm22z.hcc.uni-magdeburg.de:3322' not reached
+TIME        Wed Jun 30 09:45:15 2010
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3255
+DETAIL      NiPConnect2: 141.44.38.144:3322
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     1
+
+
+**** ERROR file opened at 20100630 094554 Westeuropäische Normalzeit, SAP-REL 720,0,39 RFC-VER 3  MT-SL
+T:3852 Error in program 'javaw': ======> SAP_CMINIT3 : rc=20 > Connect to SAP gateway failed
+Connect_PM  GWHOST=m22z.hcc.uni-magdeburg.de, GWSERV=sapgw22, SYSNR=22
+
+LOCATION    CPIC (TCP/IP) on local host
+ERROR       partner 'm22z.hcc.uni-magdeburg.de:3322' not reached
+TIME        Wed Jun 30 09:45:54 2010
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3255
+DETAIL      NiPConnect2: 141.44.38.144:3322
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     1
+
+
+**** ERROR file opened at 20100630 094714 Westeuropäische Normalzeit, SAP-REL 720,0,39 RFC-VER 3  MT-SL
+T:2888 Error in program 'javaw': ======> SAP_CMINIT3 : rc=20 > Connect to SAP gateway failed
+Connect_PM  GWHOST=m22z.hcc.uni-magdeburg.de, GWSERV=sapgw22, SYSNR=22
+
+LOCATION    CPIC (TCP/IP) on local host
+ERROR       partner 'm22z.hcc.uni-magdeburg.de:3322' not reached
+TIME        Wed Jun 30 09:47:14 2010
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3255
+DETAIL      NiPConnect2: 141.44.38.144:3322
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     1
+
+
+**** ERROR file opened at 20100630 094743 Westeuropäische Normalzeit, SAP-REL 720,0,39 RFC-VER 3  MT-SL
+T:2888 Error in program 'javaw': ======> SAP_CMINIT3 : rc=20 > Connect to SAP gateway failed
+Connect_PM  GWHOST=m22z.hcc.uni-magdeburg.de, GWSERV=sapgw22, SYSNR=22
+
+LOCATION    CPIC (TCP/IP) on local host
+ERROR       partner 'm22z.hcc.uni-magdeburg.de:3322' not reached
+TIME        Wed Jun 30 09:47:43 2010
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3255
+DETAIL      NiPConnect2: 141.44.38.144:3322
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     2
+
+
+**** ERROR file opened at 20100827 095526 Mitteleuropäis, SAP-REL 640,0,165 RFC-VER 3 881549 MT-SL
+T:3636 Error in program 'javaw': ======> Name oder Kennwort ist nicht korrekt (Bitte Anmeldung wiederholen)
+T:3636 Error in program 'javaw': <* RfcReceive [5] : returns 3:RFC_SYS_EXCEPTION
+
+**** ERROR file opened at 20100827 102204 Mitteleuropäis, SAP-REL 640,0,165 RFC-VER 3 881549 MT-SL
+T:3636 Error in program 'javaw': ======> Name oder Kennwort ist nicht korrekt (Wiederholen Sie die Anmeldung)
+T:3636 Error in program 'javaw': <* RfcReceive [8] : returns 3:RFC_SYS_EXCEPTION

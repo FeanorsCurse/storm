@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="www.storm.uni-oldenburg.de"
+    targetNamespace="www.storm.uni-oldenburg.de">
+    <xs:element name="article" type="article"/>
+    <xs:complexType name="article">
+        <xs:sequence>
+            <xs:element name="name" nillable="false" type="xs:string"/>
+            <xs:element name="content" type="xs:string"/>
+            <xs:element name="author" type="user"/>
+        </xs:sequence>
+        <xs:attribute name="dateCreated" type="xs:date" use="required"/>
+        <xs:attribute name="lastUpdated" type="xs:date" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="user">
+        <xs:attribute name="firstname" type="xs:string" use="required"/>
+        <xs:attribute name="lastname" type="xs:string" use="required"/>
+    </xs:complexType>
+</xs:schema>

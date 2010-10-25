@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<movie version="10">
+  <frame>
+    <library>
+      <font name="Silkscreen" import="slkscr.ttf" />
+    </library>
+  </frame>
+</movie>

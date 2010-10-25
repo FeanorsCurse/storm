@@ -1,0 +1,36 @@
+/* Calendar */
+table.calendar td.minuteWithItems {
+	background: #ffed8c;
+	opacity: 0.7;
+}
+
+table.calendar .oddHour {
+	background: #EEEEEE;
+}
+
+table.calendar .evenHour {
+	background: #f7f7f7;
+}
+
+table.calendar td.minute {
+	/* height: 95%; */
+	width: 12%;	
+}
+
+table.calendar td.time {
+	/* height: 5%; */
+	width: 5%;	
+}
+
+/* Day title */
+table.calendar h1 {
+	color:#5C5C5C;
+}
+
+table.calendar {
+	border-collapse: collapse;	
+}
+
+table.calendar th, table.calendar td {
+	border-left:1px solid #DDDDDD;
+}

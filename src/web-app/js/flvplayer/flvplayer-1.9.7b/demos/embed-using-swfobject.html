@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FLV Flash Fullscreen Video Player</title>
+
+<link rel="stylesheet" type="text/css" href="http://www.video-flash.de/wp-content/uploads/2008/01/style.css"/>
+
+<!-- ::::::::::::::::::::::::::::::::::: -->	
+<!-- ::::::: FLV Player (part 1/2)::::: -->
+<!-- ::::::::::::::::::::::::::::::::::: -->	
+	
+<script type="text/javascript" src="../flvplayer/swfobject.js"></script>
+
+<script type="text/javascript">
+	var flashvars = {};
+	
+		/* flv player parameters */		
+		flashvars.playerpath = ""; 				
+		flashvars.contentpath = "../flvplayer/content";	
+		
+		flashvars.video = "demo-video.flv";
+		flashvars.preview = "demo-preview.jpg";						
+		
+	    flashvars.skin = "skin-applestyle.swf";
+		flashvars.skincolor = "0x2c8cbd";
+		flashvars.skinscalemaximum = "1";				
+	
+		flashvars.captions = "demo-captions.xml";
+		
+		// ...
+		//see documentation for all the parameters
+		
+		
+		/* end */		
+					
+		var params = {};
+			params.scale = "noscale";
+			params.allowfullscreen = "true";
+			params.salign = "tl";   
+   		 	params.base = ".";  
+		
+		var attributes = {};
+			attributes.align = "left";   
+		   
+		
+	/* embed flv player */			
+	// adapt the path to flvplayer.swf and expressInstall.swf
+	// adapt the display size of the flash file	
+	swfobject.embedSWF("../flvplayer/flvplayer.swf", "videoPlayer", "650", "530", "9.0.28", "../flvplayer/expressInstall.swf", flashvars, params, attributes);
+	/* end */	
+	
+</script>
+
+<!-- :::::::::::::::::::::::::::::: -->	
+<!-- :::::::::::::::::::::::::::::: -->	
+<!-- :::::::::::::::::::::::::::::: -->
+
+</head>
+
+<body>
+
+<div id="wrap" style="height:1000px"><!--grid container-->
+
+
+	<!-- :::::::::::::: -->
+	
+	<h1>FLV Flash Fullscreen Video Player</h1>
+	<hr/>	
+
+
+	<h2>FLV Player Demo</h2>
+	
+	<h3>Embed FLV Player using SWFObject</h3>
+	
+	<p>This examples show how to embed the FLV Player using SWFObject.</p>
+
+
+
+
+	
+	<!-- ::::::::::::::::::::::::::::::::::: -->	
+	<!-- ::::::: FLV Player (part 2/2) ::::: -->
+	<!-- ::::::::::::::::::::::::::::::::::: -->
+	
+	<div id="videoPlayer" style="margin:0px">
+	
+	    <p>This content requires the Adobe Flash Player.</p>
+
+		<p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a>
+	    </p>
+
+	</div>
+
+	<!-- :::::::::::::::::::::::::::::: -->	
+	<!-- :::::::::::::::::::::::::::::: -->	
+	<!-- :::::::::::::::::::::::::::::: -->
+	
+	
+	
+
+	<!-- :::::::::::::::::::::::::::::: -->
+	
+	
+	<!-- Footer -->
+	
+	<div id="footnotes" style="clear:both">
+		<p><a href="http://www.video-flash.de/" title="www.video-flash.de">www.video-flash.de</a>, Florian Plag</p>
+	</div>
+
+</div><!--end grid container-->
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="www.storm.uni-oldenburg.de"
+    targetNamespace="www.storm.uni-oldenburg.de">
+
+    <xs:include schemaLocation="indicator.xsd"/>
+    <xs:element name="tnode" type="tnode"/>
+    <xs:complexType name="tnode">
+
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="description" type="xs:string"/>
+            <xs:element form="unqualified" name="source" type="xs:anyURI" minOccurs="0"/>
+            <xs:element minOccurs="0" name="children" type="children"/>
+            <xs:element minOccurs="0" name="indicators" type="indicators"/>
+        </xs:sequence>
+        <xs:attribute name="creationDate" type="xs:date" use="optional"/>
+        <xs:attribute name="lastModified" type="xs:date"/>
+
+    </xs:complexType>
+    <xs:complexType name="indicators">
+        <xs:sequence>
+            <xs:choice>
+                <xs:element maxOccurs="unbounded" minOccurs="1" name="indicator" type="indicator"/>
+                <xs:element name="query" type="xs:anyURI"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="children">
+        <xs:sequence>
+            <xs:choice>
+                <xs:element name="tnode" maxOccurs="unbounded" minOccurs="1" type="tnode"/>
+                <xs:element name="query" type="xs:anyURI"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

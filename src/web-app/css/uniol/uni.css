@@ -1,0 +1,301 @@
+
+/* Einrichtungsspezifisches Stylesheet */
+/* /img/css/orga/uni.css */
+/* uni */
+
+
+/*******************************************************
+ * Seitenger�st
+ *******************************************************/
+
+body {background-color:#E6EBDE;}
+#inhaltinfos p {background-color:#E6EBDE;}
+
+/*******************************************************
+ * Kopf und Bereichstitel
+ *******************************************************/
+
+
+
+/*
+*/
+#site-titel {
+ display:block;
+ margin-top:0;
+ margin-bottom:0;
+ padding-top:0px;
+ padding-left:0;
+ background:url(../../images/templates/uniol/name-grafik.gif) 0 0 no-repeat;
+ text-indent:-9999px;
+ font-size:1px;
+ z-index:50;
+}
+#site-titel a {
+ height:62px;
+}
+/*******************************************************
+ * Inhalt_Wrapper
+ *******************************************************/
+
+#inhalt_wrapper {
+/*
+ background:url(http://www.uni-oldenburg.de/img/orga/weiterbildung/kopf-hg.gif)
+ 	-155px -76px no-repeat #fff;
+*/
+ background-color:#fff;}
+
+
+/*******************************************************
+ * Men�
+ *******************************************************/
+#menue #kopfbild {
+  background: url(../../images/templates/uniol/a14-mahnmal_190.jpg) 0 -4px no-repeat; 
+ border-bottom:1px solid #fff; /* #0D59AB; */
+}
+
+/*******************************************************
+ * Inhalt
+ *******************************************************/
+#inhalt h1,#inhalt h2,#inhalt h3,#inhalt h4 {
+ color:#0D59AB;
+ color:#0C54A1;
+ color:#0C519B;
+ color:#365F8C;
+}
+
+/*../orga/uni/styles.css*/
+
+
+
+
+
+
+
+/*Box in der das Menü ist*/
+#menu_box {
+	position: relative;
+	z-index: 50;
+	bottom: 0px;
+	height: 25px;
+	width: 100%;
+	padding: 0px;
+	margin-top:1px;
+	margin-bottom:2px;
+	color: #000;
+	text-align: right;
+	top:111px;
+	background:#D4D9CD;
+	list-style-type:none;
+}
+
+/*Div in dem das Menü ist*/
+#menu_top {
+	position: relative;
+	z-index: 50;
+	width: 100%;
+	padding-top:5px;
+	padding-bottom:0px;
+	list-style-type:none;
+	color:#0B4B83;
+	font-weight:bold;
+}
+
+/*Menü-Liste 1. Ebene - Waagerecht*/
+#menu_top ul {
+	list-style-type:none;
+	padding:0px;
+	margin:0px;
+}
+
+/*Menü-Eintrag 1. Ebene - Waagerecht*/
+#menu_top li {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
+	float: left;
+	cursor: pointer;
+	background: #D4D9CD;
+}
+
+/*Menü-Eintrag - Mouseover - 1. Ebene - Waagerecht*/
+#menu_top li:hover {
+	background: #79C925;
+	padding-top: 0px;
+	padding-left: 7px;
+	padding-right: 7px;
+	padding-bottom: 0px;
+	border: 3px solid #79C925;
+	border-bottom-width:2px;
+	color:#000000;
+	/*color:#0B4B83;
+	text-decoration: none;
+	font-weight:normal;*/
+}
+
+
+/*Text im Drop-Down-Menü ohne Mouse-Over! - hover bezieht sich auf die 1. Ebene*/
+#menu_top a,#menu_top a:hover {
+	color:#0B4B83;
+	text-decoration: none;
+	font-weight:normal;
+}
+
+/*Menü-Liste 2.Ebene, wird zunächst nicht angezeigt*/
+#menu_top ul li ul {
+	display: none;
+	color:#0B4B83;
+}
+
+/*Menü-Liste 2.Ebene, sichbar bei Mouseover über Menü-Eintrag 1.Ebene  */
+#menu_top ul li:hover ul {
+	background: #D4D9CD;
+	position: absolute;
+	display: block;
+	margin-left: -10px;
+	margin-top: 0px;
+	clear: left;
+	text-align: left;
+	border:3px solid #79C925;
+	padding-right:10px;
+}
+
+/*Menü-Eintrag 2.Ebene, sichbar bei Mouseover über Menü-Eintrag 1.Ebene  */
+#menu_top ul li:hover ul li {
+	clear: left;
+	display: block;
+	margin: 0px;
+	width:100%;
+	background: #D4D9CD;
+	border: none;
+	padding:5px;
+}
+
+/*Menü-Eintrag 2.Ebene - Mousover - , sichbar bei Mouseover über Menü-Eintrag 1.Ebene  */
+#menu_top ul li:hover ul li:hover {
+	clear: left;
+	display: block;
+	width:100%;
+	margin: 0px;
+	border: none;
+	padding:5px;
+	background:#FFFFFF;
+}
+
+/*Menü-Eintrag 2.Ebene - Link-Mousover - , sichbar bei Mouseover über Menü-Eintrag 1.Ebene  */
+#menu_top ul li:hover ul li a:hover {
+	color: #000000;
+	text-decoration:underline;
+}
+
+
+
+
+#header_text {
+	position:relative;
+	font-size:35px;
+	top:20px;
+	left:300px;
+	color:#FFFFFF;
+	font-weight:bold;
+}
+
+
+#search_lang {
+	position:absolute;
+	z-index:50;
+	right:3px;
+	top:0px;
+	max-width:450px;
+	height:40px;
+}
+
+#language {
+	padding:0px;
+	margin:0px;
+	max-width:250px;
+}
+
+#language a {
+	padding:0px;
+	margin:0px;
+}
+
+#search {
+	padding:0px;
+	margin:0px;
+	width:180px;
+}
+
+#languageBox {
+	width:100px;	
+	margin:0px;
+	padding:0px;
+	margin-right:5px;
+}
+
+#searchBox {
+}
+
+#searchInput{
+	width:100px;
+	margin-right:5px;
+}
+
+#footer{
+	text-align:right;
+}
+
+.sidemenu_header {
+	background-color:#99C85B;
+ 	color:#000;	
+}
+
+.sidemenu_header p {
+ 	margin-left:20px;
+ 	padding-top:5px;
+ 	padding-bottom:5px;
+ 	margin-bottom:0px;
+}
+
+.sidemenu_header ul {
+	background-color:#D0E1B8;
+ 	color:#000;	
+}
+
+#spSocialBookmark {
+	margin:20px auto 0 auto;
+}
+
+#spSocialBookmark.spArticleBottomBox{
+	margin:0;
+}
+
+#spSocialBookmark ul{
+	margin: 0;
+	padding: 0;	
+}
+
+#spSocialBookmark li{
+	float: left;
+	list-style: none;
+	margin: 0 0 0 4px;
+	padding:0;
+}
+
+#spSocialBookmark li img{
+	padding: 1px;
+	border: solid 1px #ccc;
+}
+
+#spSocialBookmark li a{
+	font-size: 0.8333em;
+}
+
+#spSocialBookmark .spFirst {
+	margin-left:0 !important;
+}
+
+#spSocialBookmark.spArticleBottomBox .spSocialBookmarkDe li{
+	margin-left: 13.4px;
+}

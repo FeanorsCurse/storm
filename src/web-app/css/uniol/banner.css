@@ -1,0 +1,51 @@
+/* Gesamtbreite: 980 */
+#page_margins { 
+	background:url(../../images/templates/uniol/hsz_01.jpg) 0 71px no-repeat transparent; 
+	width:970px; 
+}
+#page_margins2 { 
+	background:url(../../images/templates/uniol/kopf-hg-ohneweiss.gif) 0 -5px no-repeat transparent !important; 
+}
+#navizeile, #kopfbild {
+	display:none;
+}
+
+
+#header{
+ height:141px !important;
+ background:url(../../images/templates/uniol/bogen1000_transparent.png) 0 1px;
+}
+h4#site-titel { 
+	margin-top:1px !important; 
+	height:50px !important;
+}
+h4#site-titel a {
+	height:40px !important;
+}
+
+#menue {
+	padding-top:93px;
+}
+#col3 {
+	background-color:transparent !important;
+}
+#col3_content {
+	margin-top:115px;
+	padding-top:1px;
+}
+div.orglogo {
+	display:none !important;
+}
+
+
+#navizeile {
+	display:block; 
+	/* height:25px !important; */
+	margin:0 !important;
+	padding-top:0px !important; 
+	padding-bottom:0 !important;
+}
+h4#site-titel { 
+	margin-top:0px; 
+	height:50px !important;
+}

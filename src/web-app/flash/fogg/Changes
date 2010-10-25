@@ -1,0 +1,28 @@
+README corrected. 12-Mar-09
+
+Progress bar code updated from HaXePlayer. Source files
+split. 11-Mar-09
+
+Add documentation. 24-Feb-09
+
+Comment out play progress and replay functionality. Not currently
+working with the FOgg decoder. 23-Feb-09
+
+Stop and restart now working. Calculated length from play
+time. 21-Feb-09
+
+Pause button now working correctly. Attempt at stop and restart from
+beginning not cracked yet. 19-Feb-09
+
+Updated to use the new soundapi branch of FOgg. FOgg.hx removed,
+VSound.hx added. 13-Feb-09
+
+Added GPL licence file and code updating 12-Feb-09
+
+More events added. FOggPlayer.hx split from FOgg.hx. 11-Feb-09
+
+PAudioSink split out, event handler added to AudioSink, functionality
+added. 10-Feb-09
+
+Sources posted on sourceforge:
+https://foggplayer.svn.sourceforge.net/svnroot/foggplayer.

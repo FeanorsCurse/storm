@@ -1,0 +1,52 @@
+/* Calendar */
+table.calendar td.dayWithItems {
+	background: #ffed8c;
+	border: 1px solid #ffde33;
+}
+
+table.calendar td.outsideOfMonth {
+	background: #BBBBBB;	
+}
+
+table.calendar td.today {
+	background: #B2D1FF;
+}
+
+table.calendar .oddDay {
+	background: #efefef;
+}
+
+table.calendar .evenDay {
+	background: #f7f7f7;
+}
+
+table.calendar td.day {
+	/*
+	height: 12.5%;
+	width: 12.5%;
+	*/
+	height: 7em;
+	width: 7em;	
+}
+
+table.calendar td.weekOfYear {
+	height: 5%;
+	width: 5%;	
+}
+
+/* Day title */
+table.calendar h1 {
+	color:#5C5C5C;
+}
+
+table.calendar th:hover, table.calendar td:hover {
+
+}
+
+table.calendar {
+	border-collapse: collapse;	
+}
+
+table.calendar th, table.calendar td {
+	border-left:1px solid #DDDDDD;
+}

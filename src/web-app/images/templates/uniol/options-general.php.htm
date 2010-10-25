@@ -1,0 +1,761 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="de-DE"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>XML-Sitemap Generator ‹ Mitspargelegenheit.de  — WordPress</title>
+<script type="text/javascript">
+//<![CDATA[
+addLoadEvent = function(func){if(typeof jQuery!="undefined")jQuery(document).ready(func);else if(typeof wpOnload!='function'){wpOnload=func;}else{var oldonload=wpOnload;wpOnload=function(){oldonload();func();}}};
+var userSettings = {'url':'/projekte/mitspargelegenheit/','uid':'1','time':'1271009055'};
+var ajaxurl = 'http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/admin-ajax.php', pagenow = 'options-general', adminpage = 'settings_page_google-sitemap-generator-sitemap',  thousandsSeparator = ',', decimalPoint = '.';
+//]]>
+</script>
+<link rel="stylesheet" href="options-general.php-Dateien/load-styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="colors-css" href="options-general.php-Dateien/colors-fresh.css" type="text/css" media="all">
+<!--[if lte IE 7]>
+<link rel='stylesheet' id='ie-css'  href='http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/css/ie.css?ver=20091217' type='text/css' media='all' />
+<![endif]-->
+<script type="text/javascript" src="options-general.php-Dateien/tw-sack.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+function expirationdate_ajax_add_meta(expireenable) {
+	var mysack = new sack("http://wp-admin/admin-ajax.php");
+
+	var expire = document.getElementById(expireenable);
+
+	if (expire.checked == true) {
+		var enable = 'true';
+		document.getElementById('expirationdate_month').disabled = false;
+		document.getElementById('expirationdate_day').disabled = false;
+		document.getElementById('expirationdate_year').disabled = false;
+		document.getElementById('expirationdate_hour').disabled = false;
+	} else {
+		document.getElementById('expirationdate_month').disabled = true;
+		document.getElementById('expirationdate_day').disabled = true;
+		document.getElementById('expirationdate_year').disabled = true;
+		document.getElementById('expirationdate_hour').disabled = true;
+		var enable = 'false';
+	}
+	
+	mysack.execute = 1;
+	mysack.method = 'POST';
+	mysack.setVar( "action", "expirationdate_ajax" );
+	mysack.setVar( "enable", enable );
+	mysack.encVar( "cookie", document.cookie, false );
+	mysack.onError = function() { alert('Ajax error in looking up elevation' )};
+	mysack.runAJAX();
+
+	return true;
+}
+//]]>
+</script>
+<script type="text/javascript" src="options-general.php-Dateien/load-scripts_002.js"></script>
+<script language="JavaScript" type="text/javascript" src="options-general.php-Dateien/scripts_002.js"></script>
+<script language="JavaScript" type="text/javascript" src="options-general.php-Dateien/scripts.js"></script>
+<script type="text/javascript">
+//window.onload=function(){enableTooltips()};
+</script>
+<!--<link rel="stylesheet" type="text/css" href="/plugins/wp-security-scan/style.css" />-->
+</head><body class="wp-admin js  settings_page_google-sitemap-generator-sitemap">
+<script type="text/javascript">
+//<![CDATA[
+(function(){
+var c = document.body.className;
+c = c.replace(/no-js/, 'js');
+document.body.className = c;
+})();
+//]]>
+</script>
+
+<div id="wpwrap">
+<div id="wpcontent">
+<div id="wphead">
+
+<img id="header-logo" src="options-general.php-Dateien/blank.gif" alt="" height="32" width="32"> <h1 id="site-heading"><a href="http://mitspargelegenheit.de/" title="Zur Seite"><span id="site-title">Mitspargelegenheit.de</span> <em id="site-visit-button">Zur Seite</em></a></h1>
+
+<div id="wphead-info">
+<div id="user_info">
+<p>Willkommen <a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/profile.php" title="Bearbeite dein Profil">admin</a><span style="display: inline;" class="turbo-nag hidden"> | <a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/tools.php">Turbo</a></span> |
+<a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-login.php?action=logout&amp;_wpnonce=1f4f72a9f1" title="Abmelden">Abmelden</a></p>
+</div>
+
+<div id="favorite-actions"><div id="favorite-first"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/post-new.php">Neuer Artikel</a></div><div id="favorite-toggle"><br></div><div style="width: 126px;" id="favorite-inside"><div class="favorite-action"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/edit.php?post_status=draft">Entwürfe</a></div>
+<div class="favorite-action"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/page-new.php">Neue Seite</a></div>
+<div class="favorite-action"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/media-new.php">Hochladen</a></div>
+<div class="favorite-action"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/edit-comments.php">Kommentare</a></div>
+<div class="favorite-action"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-general.php?page=wpsupercache&amp;wp_delete_cache=1&amp;_wpnonce=f6290ac3fd">Delete Cache</a></div>
+</div></div>
+</div>
+</div>
+
+<div id="wpbody">
+
+<ul id="adminmenu">
+
+
+	<li class="wp-first-item menu-top menu-top-first menu-top-last" id="menu-dashboard">
+	<div class="wp-menu-image"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/index.php"><br></a></div><div style="display: none;" class="wp-menu-toggle"><br></div><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/index.php" class="wp-first-item menu-top menu-top-first menu-top-last" tabindex="1">Dashboard</a></li>
+	<li class="wp-menu-separator"><a class="separator" href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-general.php?unfoldmenu=1"><br></a></li>
+	<li class="wp-has-submenu open-if-no-js menu-top menu-top-first" id="menu-posts">
+	<div class="wp-menu-image"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/edit.php"><br></a></div><div class="wp-menu-toggle"><br></div><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/edit.php" class="wp-has-submenu open-if-no-js menu-top menu-top-first" tabindex="1">Artikel</a>
+	<div class="wp-submenu"><div class="wp-submenu-head">Artikel</div><ul><li class="wp-first-item"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/edit.php" class="wp-first-item" tabindex="1">Bearbeiten</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/post-new.php" tabindex="1">Erstellen</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/edit-tags.php?taxonomy=post_tag" tabindex="1">Schlagwörter</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/categories.php" tabindex="1">Kategorien</a></li></ul></div></li>
+	<li class="wp-has-submenu menu-top" id="menu-media">
+	<div class="wp-menu-image"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/upload.php"><br></a></div><div class="wp-menu-toggle"><br></div><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/upload.php" class="wp-has-submenu menu-top" tabindex="1">Mediathek</a>
+	<div class="wp-submenu"><div class="wp-submenu-head">Mediathek</div><ul><li class="wp-first-item"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/upload.php" class="wp-first-item" tabindex="1">Medienübersicht</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/media-new.php" tabindex="1">Datei hinzufügen</a></li></ul></div></li>
+	<li class="wp-has-submenu menu-top" id="menu-links">
+	<div class="wp-menu-image"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/link-manager.php"><br></a></div><div class="wp-menu-toggle"><br></div><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/link-manager.php" class="wp-has-submenu menu-top" tabindex="1">Links</a>
+	<div class="wp-submenu"><div class="wp-submenu-head">Links</div><ul><li class="wp-first-item"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/link-manager.php" class="wp-first-item" tabindex="1">Bearbeiten</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/link-add.php" tabindex="1">Hinzufügen</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/edit-link-categories.php" tabindex="1">Kategorien</a></li></ul></div></li>
+	<li class="wp-has-submenu menu-top" id="menu-pages">
+	<div class="wp-menu-image"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/edit-pages.php"><br></a></div><div class="wp-menu-toggle"><br></div><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/edit-pages.php" class="wp-has-submenu menu-top" tabindex="1">Seiten</a>
+	<div class="wp-submenu"><div class="wp-submenu-head">Seiten</div><ul><li class="wp-first-item"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/edit-pages.php" class="wp-first-item" tabindex="1">Bearbeiten</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/page-new.php" tabindex="1">Erstellen</a></li></ul></div></li>
+	<li class="menu-top menu-top-last" id="menu-comments">
+	<div class="wp-menu-image"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/edit-comments.php"><br></a></div><div style="display: none;" class="wp-menu-toggle"><br></div><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/edit-comments.php" class="menu-top menu-top-last" tabindex="1">Kommentare <span id="awaiting-mod" class="count-0"><span class="pending-count">0</span></span></a></li>
+	<li class="wp-menu-separator"><a class="separator" href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-general.php?unfoldmenu=1"><br></a></li>
+	<li class="wp-has-submenu menu-top menu-top-first wp-menu-open" id="menu-appearance">
+	<div class="wp-menu-image"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/themes.php"><br></a></div><div class="wp-menu-toggle"><br></div><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/themes.php" class="wp-has-submenu menu-top menu-top-first" tabindex="1">Design</a>
+	<div class="wp-submenu"><div class="wp-submenu-head">Design</div><ul><li class="wp-first-item"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/themes.php" class="wp-first-item" tabindex="1">Themes</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/widgets.php" tabindex="1">Widgets</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/theme-editor.php" tabindex="1">Editor</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/theme-install.php" tabindex="1">Installieren</a></li></ul></div></li>
+	<li class="wp-has-submenu menu-top wp-menu-open" id="menu-plugins">
+	<div class="wp-menu-image"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/plugins.php"><br></a></div><div class="wp-menu-toggle"><br></div><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/plugins.php" class="wp-has-submenu menu-top" tabindex="1">Plugins <span class="update-plugins count-11"><span class="plugin-count">11</span></span></a>
+	<div class="wp-submenu"><div class="wp-submenu-head">Plugins <span class="update-plugins count-11"><span class="plugin-count">11</span></span></div><ul><li class="wp-first-item"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/plugins.php" class="wp-first-item" tabindex="1">Verwalten</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/plugin-install.php" tabindex="1">Installieren</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/plugin-editor.php" tabindex="1">Editor</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/plugins.php?page=si-captcha-for-wordpress/si-captcha.php" tabindex="1">SI Captcha-Optionen</a></li></ul></div></li>
+	<li class="wp-has-submenu menu-top" id="menu-users">
+	<div class="wp-menu-image"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/users.php"><br></a></div><div class="wp-menu-toggle"><br></div><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/users.php" class="wp-has-submenu menu-top" tabindex="1">Benutzer</a>
+	<div class="wp-submenu"><div class="wp-submenu-head">Benutzer</div><ul><li class="wp-first-item"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/users.php" class="wp-first-item" tabindex="1">Autoren &amp; Benutzer</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/user-new.php" tabindex="1">Hinzufügen</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/profile.php" tabindex="1">Dein Profil</a></li></ul></div></li>
+	<li class="wp-has-submenu menu-top" id="menu-tools">
+	<div class="wp-menu-image"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/tools.php"><br></a></div><div class="wp-menu-toggle"><br></div><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/tools.php" class="wp-has-submenu menu-top" tabindex="1">Werkzeuge</a>
+	<div class="wp-submenu"><div class="wp-submenu-head">Werkzeuge</div><ul><li class="wp-first-item"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/tools.php" class="wp-first-item" tabindex="1">Werkzeuge</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/import.php" tabindex="1">Daten importieren</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/export.php" tabindex="1">Daten exportieren</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/update-core.php" tabindex="1">Autoupdate</a></li></ul></div></li>
+	<li class="wp-has-submenu wp-has-current-submenu wp-menu-open menu-top menu-top-last" id="menu-settings">
+	<div class="wp-menu-image"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-general.php"><br></a></div><div class="wp-menu-toggle"><br></div><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-general.php" class="wp-has-submenu wp-has-current-submenu wp-menu-open menu-top menu-top-last" tabindex="1">Einstellungen</a>
+	<div class="wp-submenu"><div class="wp-submenu-head">Einstellungen</div><ul><li class="wp-first-item"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-general.php" class="wp-first-item" tabindex="1">Allgemein</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-writing.php" tabindex="1">Schreiben</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-reading.php" tabindex="1">Lesen</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-discussion.php" tabindex="1">Diskussion</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-media.php" tabindex="1">Mediathek</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-privacy.php" tabindex="1">Privatsphäre</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-permalink.php" tabindex="1">Permalinks</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-misc.php" tabindex="1">Verschiedenes</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-general.php?page=add-to-any.php" tabindex="1">Share/Save Buttons</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-general.php?page=all-in-one-seo-pack/aioseop.class.php" tabindex="1">All in One SEO</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-general.php?page=cryptx/cryptx.php" tabindex="1"><img src="options-general.php-Dateien/icon.png" alt="CryptX Icon" height="10" width="10">CryptX</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-general.php?page=easy-adsenser.php" tabindex="1">Easy AdSense</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-general.php?page=evermore/evermore.php" tabindex="1">Evermore</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-general.php?page=more-link-modifier/more-link-options.php" tabindex="1">More Link</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-general.php?page=post-expirator.php" tabindex="1">Post Expirator</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-general.php?page=seo-links.php" tabindex="1">SEO Smart Links</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-general.php?page=wpsupercache" tabindex="1">WP Super Cache</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-general.php?page=yet-another-related-posts-plugin/options.php" tabindex="1">Related Posts (YARPP)</a></li><li class="current"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-general.php?page=google-sitemap-generator/sitemap.php" class="current" tabindex="1">XML-Sitemap</a></li></ul></div></li>
+	<li class="wp-menu-separator-last"><a class="separator" href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-general.php?unfoldmenu=1"><br></a></li>
+	<li class="wp-has-submenu menu-top toplevel_page_wp-security-scan/securityscan menu-top-first menu-top-last" id="toplevel_page_wp-security-scan-securityscan"><div class="wp-menu-image"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/admin.php?page=wp-security-scan/securityscan.php"><img src="options-general.php-Dateien/lock.png" alt=""></a></div><div class="wp-menu-toggle"><br></div><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/admin.php?page=wp-security-scan/securityscan.php" class="wp-has-submenu menu-top toplevel_page_wp-security-scan/securityscan menu-top-first menu-top-last" tabindex="1">Security</a>
+	<div class="wp-submenu"><div class="wp-submenu-head">Security</div><ul><li class="wp-first-item"><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/admin.php?page=wp-security-scan/securityscan.php" class="wp-first-item" tabindex="1">Security</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/admin.php?page=scanner" tabindex="1">Scanner</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/admin.php?page=passwordtool" tabindex="1">Password Tool</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/admin.php?page=database" tabindex="1">Database</a></li><li><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/admin.php?page=support" tabindex="1">Support</a></li></ul></div></li></ul>
+
+<div id="wpbody-content">
+<div id="screen-meta">
+	<div id="contextual-help-wrap" class="hidden">
+	<h5>Hilfe zu “XML-Sitemap Generator”</h5><div class="metabox-prefs"><a href="http://www.arnebrachhold.de/redir/sitemap-help-home/">Plugin Homepage</a><br><a href="http://www.arnebrachhold.de/redir/sitemap-help-faq/">My Sitemaps FAQ</a></div>
+<h5>Weitere Hilfe</h5><div class="metabox-prefs"><a href="http://doku.wordpress-deutschland.org/" target="_blank">Dokumentation</a> (<a href="http://codex.wordpress.org/" target="_blank">en</a>)<br><a href="http://forum.wordpress-deutschland.org/" target="_blank">WordPress Support-Foren</a> (<a href="http://wordpress.org/support/" target="_blank">en</a>)</div>
+	</div>
+
+<div id="screen-meta-links">
+<div id="contextual-help-link-wrap" class="hide-if-no-js screen-meta-toggle">
+<a href="#contextual-help" id="contextual-help-link" class="show-settings">Hilfe</a>
+</div>
+</div>
+</div>
+<div id="update-nag">WordPress 2.9.2 ist verfügbar! <a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/update-core.php">Jetzt aktualisieren.</a>.</div>
+				
+		<style type="text/css">
+		
+		li.sm_hint {
+			color:green;
+		}
+		
+		li.sm_optimize {
+			color:orange;
+		}
+		
+		li.sm_error {
+			color:red;
+		}
+		
+		input.sm_warning:hover {
+			background: #ce0000;
+			color: #fff;
+		}
+		
+		a.sm_button {
+			padding:4px;
+			display:block;
+			padding-left:25px;
+			background-repeat:no-repeat;
+			background-position:5px 50%;
+			text-decoration:none;
+			border:none;
+		}
+		
+		a.sm_button:hover {
+			border-bottom-width:1px;
+		}
+
+		a.sm_donatePayPal {
+			background-image:url(http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-content/plugins/google-sitemap-generator/img/icon-paypal.gif);
+		}
+		
+		a.sm_donateAmazon {
+			background-image:url(http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-content/plugins/google-sitemap-generator/img/icon-amazon.gif);
+		}
+		
+		a.sm_pluginHome {
+			background-image:url(http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-content/plugins/google-sitemap-generator/img/icon-arne.gif);
+		}
+		
+		a.sm_pluginList {
+			background-image:url(http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-content/plugins/google-sitemap-generator/img/icon-email.gif);
+		}
+		
+		a.sm_pluginSupport {
+			background-image:url(http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-content/plugins/google-sitemap-generator/img/icon-wordpress.gif);
+		}
+		
+		a.sm_pluginBugs {
+			background-image:url(http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-content/plugins/google-sitemap-generator/img/icon-trac.gif);
+		}
+		
+		a.sm_resGoogle {
+			background-image:url(http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-content/plugins/google-sitemap-generator/img/icon-google.gif);
+		}
+		
+		a.sm_resYahoo {
+			background-image:url(http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-content/plugins/google-sitemap-generator/img/icon-yahoo.gif);
+		}
+		
+		a.sm_resBing {
+			background-image:url(http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-content/plugins/google-sitemap-generator/img/icon-bing.gif);
+		}
+		
+		div.sm-update-nag p {
+			margin:5px;
+		}
+		
+		</style>
+		
+					<style type="text/css">
+		
+				.sm-padded .inside {
+					margin:12px!important;
+				}
+				.sm-padded .inside ul {
+					margin:6px 0 12px 0;
+				}
+				
+				.sm-padded .inside input {
+					padding:1px;
+					margin:0;
+				}
+			</style>
+				
+					
+		<div class="wrap" id="sm_div">
+			<form method="post" action="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-general.php?page=google-sitemap-generator/sitemap.php&amp;sm_wpv=2.9&amp;sm_pv=3.2.2">
+				<h2>XML Sitemap Generator für WordPress 3.2.2 </h2>
+				<div id="update-nag" class="sm-update-nag">There is a new version of Google XML Sitemaps available. <a href="http://wordpress.org/extend/plugins/google-sitemap-generator/">Download version 3.2.3 here</a> or <a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/update.php?action=upgrade-plugin&amp;plugin=google-sitemap-generator%2Fsitemap.php&amp;_wpnonce=ba1aa46d3c">upgrade automatically</a>.</div>
+				
+								
+											<div id="poststuff" class="metabox-holder has-right-sidebar">
+							<div class="inner-sidebar">
+								<div id="side-sortables" class="meta-box-sortabless ui-sortable" style="position: relative;">
+													
+									
+										<div id="sm_pnres" class="postbox">
+				<h3 class="hndle"><span>Über dieses Plugin:</span></h3>
+				<div class="inside">
+											<a class="sm_button sm_pluginHome" href="http://www.arnebrachhold.de/redir/sitemap-home/">Plugin Startseite</a>
+								<a class="sm_button sm_pluginHome" href="http://www.arnebrachhold.de/redir/sitemap-feedback/">Funktion vorschlagen</a>
+								<a class="sm_button sm_pluginList" href="http://www.arnebrachhold.de/redir/sitemap-list/">E-Mail bei Update</a>
+								<a class="sm_button sm_pluginSupport" href="http://www.arnebrachhold.de/redir/sitemap-support/">Hilfe Forum</a>
+								<a class="sm_button sm_pluginBugs" href="http://www.arnebrachhold.de/redir/sitemap-bugs/">Fehler berichten</a>
+								
+								<a class="sm_button sm_donatePayPal" href="http://www.arnebrachhold.de/redir/sitemap-paypal/">Mit PayPal spenden</a>
+								<a class="sm_button sm_donateAmazon" href="http://www.arnebrachhold.de/redir/sitemap-amazon/">Amazon Wunschliste</a>
+																			</div>
+			</div>
+									
+						
+										<div id="sm_smres" class="postbox">
+				<h3 class="hndle"><span>Sitemap Informationen</span></h3>
+				<div class="inside">
+											<a class="sm_button sm_resGoogle" href="http://www.arnebrachhold.de/redir/sitemap-gwt/">Webmaster Tools</a>
+								<a class="sm_button sm_resGoogle" href="http://www.arnebrachhold.de/redir/sitemap-gwb/">Webmaster Blog</a>
+								
+								<a class="sm_button sm_resYahoo" href="http://www.arnebrachhold.de/redir/sitemap-yse/">Site Explorer</a>
+								<a class="sm_button sm_resYahoo" href="http://www.arnebrachhold.de/redir/sitemap-ywb/">Search Blog</a>
+								
+								<a class="sm_button sm_resBing" href="http://www.arnebrachhold.de/redir/sitemap-lwt/">Webmaster Tools</a>
+								<a class="sm_button sm_resBing" href="http://www.arnebrachhold.de/redir/sitemap-lswcb/">Webmaster Center Blog</a>
+								<br>
+								<a class="sm_button sm_resGoogle" href="http://www.arnebrachhold.de/redir/sitemap-prot/">Sitemaps Protokoll</a>
+								<a class="sm_button sm_resGoogle" href="http://www.arnebrachhold.de/redir/sitemap-ofaq/">Offizielle Sitemaps FAQ</a>
+								<a class="sm_button sm_pluginHome" href="http://www.arnebrachhold.de/redir/sitemap-afaq/">Meine Sitemaps FAQ</a>
+											</div>
+			</div>
+										
+										<div id="dm_donations" class="postbox">
+				<h3 class="hndle"><span>Aktuelle Spenden:</span></h3>
+				<div class="inside">
+																				<iframe border="0" allowtransparency="yes" style="width: 100%; height: 80px;" src="options-general.php-Dateien/a.htm" frameborder="0" scrolling="no">
+									Liste der Spender									</iframe><br>
+									<a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-general.php?page=google-sitemap-generator/sitemap.php&amp;sm_wpv=2.9&amp;sm_pv=3.2.2&amp;sm_hidedonors=true"><small>Liste ausblenden</small></a><br><br>
+																<a style="border: medium none ; float: left; margin-right: 5px;" href="javascript:document.getElementById('sm_donate_form').submit();"><img style="border: medium none ; vertical-align: middle; margin-top: 2px;" src="options-general.php-Dateien/icon-donate.gif" alt="PayPal" title="Help me to continue support of this plugin :)" border="0"></a>
+								<span><small>Danke für Deine Unterstützung!</small></span>
+								<div style="clear: left; height: 1px;"></div>
+											</div>
+			</div>
+										
+						
+						</div>
+					</div>
+										
+											<div class="has-sidebar sm-padded">
+					
+							<div id="post-body-content" class="has-sidebar-content">
+						
+								<div class="meta-box-sortabless">
+										
+					<!-- Rebuild Area -->
+								<div id="sm_rebuild" class="postbox">
+				<h3 class="hndle"><span>Ergebnisse der letzten Sitemap Generierung, gestartet am 11. April 2010 18:03.</span></h3>
+				<div class="inside">
+									<ul>
+							<li class="sm_error">There was a problem writing your sitemap file. Make sure the file exists and is writable. <a href="http://www.arnebrachhold.de/redir/sitemap-help-files/">Learn more</a></li><li class="sm_error">There was a problem writing your zipped sitemap file. Make sure the file exists and is writable. <a href="http://www.arnebrachhold.de/redir/sitemap-help-files/">Learn more</a></li><li>Die Sitemap-Generierung dauerte <b>0 sekunden</b> und verwendete 24.75 MB Speicher.</li><li>Falls Du etwas am Server oder am Blog geändert hast, solltest Du die Sitemap von Hand <a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-general.php?page=google-sitemap-generator%2Fsitemap.php&amp;sm_wpv=2.9&amp;sm_pv=3.2.2&amp;sm_rebuild=true&amp;noheader=true&amp;_wpnonce=ec85b82526">neu erstellen</a>.</li><li>Falls es beim Generieren der Sitemap Probleme gibt, kannst Du die <a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-general.php?page=google-sitemap-generator%2Fsitemap.php&amp;sm_wpv=2.9&amp;sm_pv=3.2.2&amp;sm_rebuild=true&amp;sm_do_debug=true&amp;_wpnonce=ec85b82526">Debug Funktion</a> verwenden um mehr über die auftretenden Fehler zu erfahren.</li>
+						</ul>
+									</div>
+			</div>
+									
+					<!-- Basic Options -->
+								<div id="sm_basic_options" class="postbox">
+				<h3 class="hndle"><span>Allgemeine Einstellungen</span></h3>
+				<div class="inside">
+								
+						<b>Sitemap Dateien:</b> <a href="http://www.arnebrachhold.de/redir/sitemap-help-options-files/">Mehr Infos</a>
+						<ul>
+							<li>
+								<label for="sm_b_xml">
+									<input id="sm_b_xml" name="sm_b_xml" checked="checked" type="checkbox">
+									Sitemap als XML Datei erzeugen								</label>
+							</li>
+							<li>
+								<label for="sm_b_gzip">
+									<input id="sm_b_gzip" name="sm_b_gzip" checked="checked" type="checkbox">
+									Gezippte Sitemap erzeugen  (Dateiname + .gz)								</label>
+							</li>
+						</ul>
+						<b>Erstellungsmodus:</b> <a href="http://www.arnebrachhold.de/redir/sitemap-help-options-process/">Mehr Infos</a>
+						<ul>
+							<li>
+								<label for="sm_b_auto_enabled">
+									<input id="sm_b_auto_enabled" name="sm_b_auto_enabled" checked="checked" type="checkbox">
+									Sitemap neu generieren wenn Du den Inhalt Deines Blogs änderst								</label>
+							</li>
+							<li>
+								<label for="sm_b_manual_enabled">
+									<input name="sm_b_manual_key" value="abd8b44eb15b79a76d624f5d26d839f9" type="hidden">
+									<input id="sm_b_manual_enabled" name="sm_b_manual_enabled" type="checkbox">
+									Manuelles Generieren der Sitemap über GET Anfrage erlauben								</label>
+								<a href="javascript:void(document.getElementById('sm_manual_help').style.display='');">[?]</a>
+								<span id="sm_manual_help" style="display: none;"><br>
+This will allow you to refresh your sitemap if an external tool wrote
+into the WordPress database without using the WordPress API. Use the
+following URL to start the process: <a href="http://mitspargelegenheit.de/?sm_command=build&amp;sm_key=abd8b44eb15b79a76d624f5d26d839f9">http://mitspargelegenheit.de/?sm_command=build&amp;sm_key=abd8b44eb15b79a76d624f5d26d839f9</a> Please check the result box above to see if sitemap was successfully built.								</span>
+							</li>
+						</ul>
+						<b>Benachrichtigung über Änderungen</b> <a href="http://www.arnebrachhold.de/redir/sitemap-help-options-ping/">Mehr Infos</a>
+						<ul>
+							<li>
+								<input id="sm_b_ping" name="sm_b_ping" checked="checked" type="checkbox">
+								<label for="sm_b_ping">Google über Änderungen benachrichtigen</label><br>
+								<small>Keine Registrierung erforderlich, aber Du kannst Dich bei den <a href="http://www.arnebrachhold.de/redir/sitemap-gwt/">Google Webmaster Tools</a> anmelden um Indexierungs-Statistiken zu Deiner Website zu sehen.</small>
+							</li>
+							<li>
+								<input id="sm_b_pingmsn" name="sm_b_pingmsn" checked="checked" type="checkbox">
+								<label for="sm_b_pingmsn">Bing (vormals MSN Live Search) über Änderungen benachrichtigen</label><br>
+								<small>Keine Registrierung erforderlich, aber Du kannst Dich bei den <a href="http://www.arnebrachhold.de/redir/sitemap-lwt/">Bing Webmaster Tools</a> anmelden um Indexierungs-Statistiken zu Deiner Website zu sehen.</small>
+							</li>
+							<li>
+								<input id="sm_b_pingask" name="sm_b_pingask" checked="checked" type="checkbox">
+								<label for="sm_b_pingask">Ask.com über Änderungen benachrichtigen</label><br>
+								<small>Keine Registrierung erforderlich</small>
+							</li>
+							<li>
+								<input id="sm_b_pingyahoo" name="sm_b_pingyahoo" type="checkbox">
+								<label for="sm_b_pingyahoo">YAHOO über Änderungen benachrichtigen</label><br>
+								<label for="sm_b_yahookey">Deine Application ID: <input name="sm_b_yahookey" id="sm_b_yahookey" type="text"></label><br>
+								<small>Noch keinen Key? <a href="http://www.arnebrachhold.de/redir/sitemap-ykr/">Hier beantragen</a>!  (<a href="http://developer.yahoo.net/about/">Web Services by Yahoo!</a>)</small>
+							</li>
+							<li>
+								<label for="sm_b_robots">
+								<input id="sm_b_robots" name="sm_b_robots" checked="checked" type="checkbox">
+								Die Sitemap zur virtuellen robots hinzufügen.								</label>
+
+								<br>
+								<small>Es wird die von WordPress generierte virtuelle robots.txt verwendet. Es dark keine robots.txt Datei im Blog Verzeichnis liegen!</small>
+							</li>
+						</ul>
+						<b>Erweiterte Einstellungen</b> <a href="http://www.arnebrachhold.de/redir/sitemap-help-options-adv/">Mehr Infos</a>
+						<ul>
+							<li>
+								<label for="sm_b_max_posts">Die Anzahl der Beiträge in der Sitemap beschränken auf: <input name="sm_b_max_posts" id="sm_b_max_posts" style="width: 40px;" type="text"></label> (Neuere Beiträge kommen zuerst)
+							</li>
+							<li>
+								<label for="sm_b_memory">Versuchen das Speicherlimit zu erhöhen auf:  <input name="sm_b_memory" id="sm_b_memory" style="width: 40px;" type="text"></label> (z.B. "4M", "16M")
+							</li>
+							<li>
+								<label for="sm_b_time">Veruschen das Zeit Limit zu erhöhen auf:  <input name="sm_b_time" id="sm_b_time" style="width: 40px;" type="text"></label> (in Sekunden, z.B. "60" oder "0" for unendlich)
+							</li>
+							<li>
+																<label for="sm_b_style">Ein XSLT Stylesheet einbinden: <input disabled="disabled" name="sm_b_style" id="sm_b_style" type="text"></label>
+								(Kompletter oder relativer Pfad zur .xsl Datei) <label for="sm_b_style_default"><input checked="checked" id="sm_b_style_default" name="sm_b_style_default" onclick="document.getElementById('sm_b_style').disabled = this.checked;" type="checkbox"> Use default 							</label></li>
+							<li>
+								<label for="sm_b_safemode">
+																		<input id="sm_b_safemode" name="sm_b_safemode" type="checkbox">
+MySQL Standard Modus aktivieren. Benutze diesen nur falls MySQL Fehler
+auftreten. (Benötigt mehr Speicher!) </label>
+							</li>
+							<li>
+								<label for="sm_b_auto_delay">
+																	<input id="sm_b_auto_delay" name="sm_b_auto_delay" checked="checked" type="checkbox">
+									Die Sitemap in einem Background-Process erstellen (Keine Verzögerung nach dem Speichern von Posts)																	</label>
+							</li>
+						</ul>
+						
+									</div>
+			</div>
+								
+								<div id="sm_pages" class="postbox">
+				<h3 class="hndle"><span>Zusätzliche Seiten</span></h3>
+				<div class="inside">
+Hier können Sie zusätzliche Seiten in Form von URLs angeben, welche mit
+in Ihre Sitemap aufgenommen werden sollen aber nicht von WordPress
+erzeugt werden. Falls Sie z.B. Ihre Homepage auf www.beispiel.com
+haben, Ihr Blog aber unter www.beispiel.com/blog zu erreichen ist,
+tragen Sie Ihre Homepage als http://www.beispiel.com hier ein.<ul><li><strong>Hinweis</strong>:
+Falls Dein Blog in einem Unterverzeichnis liegt und Du Seiten
+hinzufügen möchtest die nicht in deinem Blogverzeichnis oder einem
+tieferen Verzeichnis liegen, musst Du seine Seite ins Stammverzeichnis
+legen. (Schau Dir den Punkt "Pfad zur Sitemap Datei" weiter unten an)!</li><li><strong>URL zur Seite</strong>: Geben Sie hier die URL Ihrer Seite an. Beispiele: www.foo.com oder http://www.nic.de/index.html</li><li><strong>Priorität</strong>:
+Wählen Sie hier die Priorität der Seite relativ zu den anderen Seiten.
+Ihre Homepage könnte z.B. eine höhere Priorität besitzen als das
+Impressum. </li><li><strong>Letzte Änderung</strong>: Tragen Sie hier
+das Datum der letzten Änderung im Format JJJJ-MM-TT (z.B. 2005-12-31).
+Dieses Feld ist optional und muss nicht ausgefüllt werden.</li></ul>						<script type="text/javascript">
+							//<![CDATA[
+							
+							var changeFreqVals = new Array( 'always','hourly','daily','weekly','monthly','yearly','never' );
+							var changeFreqNames= new Array( 'Immer','Stündlich','Täglich','Wöchentlich','Monatlich','Jährlich','Nie' );
+							
+							var priorities= new Array(0 ,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0);
+							
+							var pages = [  ];
+							//]]>
+						</script>
+						<script type="text/javascript" src="options-general.php-Dateien/sitemap.js"></script>
+						<table id="sm_pageTable" cellpadding="3" cellspacing="3" width="100%">
+							<tbody><tr>
+								<th scope="col">URL zur Seite</th>
+								<th scope="col">Priorität</th>
+								<th scope="col">Änderungshäufigkeit</th>
+								<th scope="col">Letzte Änderung</th>
+								<th scope="col">#</th>
+							</tr>
+																<tr>
+										<td colspan="5" align="center">Bisher keine Seiten eingetragen.</td>
+									</tr>						</tbody></table>
+						<a href="javascript:void(0);" onclick="sm_addPage();">Neue Seite hinzufügen</a>
+									</div>
+			</div>
+								
+					
+					<!-- AutoPrio Options -->
+								<div id="sm_postprio" class="postbox">
+				<h3 class="hndle"><span>Priorität der Beiträge</span></h3>
+				<div class="inside">
+				
+						<p>Bitte wähle wie die Priorität der einzelnen Beiträge berechnet werden soll.</p>
+						<ul>
+							<li><p><input name="sm_b_prio_provider" id="sm_b_prio_provider__0" value="" checked="checked" type="radio"> <label for="sm_b_prio_provider__0">Keine automatische Prioritätsberechung verwenden</label><br>Alle Beiträge haben die selbe Priorität wlche unter "Prioriäten" eingestellt ist.</p></li>
+							<li><p><input id="sm_b_prio_provider_0" name="sm_b_prio_provider" value="GoogleSitemapGeneratorPrioByCountProvider" type="radio"> <label for="sm_b_prio_provider_0">Anzahl der Kommentare</label><br>Verwendet die Anzahl der Kommentare um die Priorität der Beiträge zu berechnen</p></li><li><p><input id="sm_b_prio_provider_1" name="sm_b_prio_provider" value="GoogleSitemapGeneratorPrioByAverageProvider" type="radio"> <label for="sm_b_prio_provider_1">Durchschnittliche Anzahl der Kommentare</label><br>Verwendet die durchschnittliche Anzahl der Kommentare um die Priorität der Beiträge zu berechnen.</p></li>						</ul>
+									</div>
+			</div>
+							
+						
+					<!-- Location Options -->
+								<div id="sm_location" class="postbox">
+				<h3 class="hndle"><span>Pfad der Sitemap Datei</span></h3>
+				<div class="inside">
+					
+						<div>
+							<b><label for="sm_location_useauto"><input id="sm_location_useauto" name="sm_b_location_mode" value="auto" checked="checked" type="radio"> Automatische Erkennung</label></b>
+							<ul>
+								<li>
+									<label for="sm_b_filename">
+										Dateiname der Sitemap										<input id="sm_b_filename" name="sm_b_filename" value="sitemap.xml" type="text">
+									</label><br>
+									Erkenater Pfad: /www/htdocs/w009f795/sitemap.xml<br>Erkannte URL: <a href="http://mitspargelegenheit.de/sitemap.xml">http://mitspargelegenheit.de/sitemap.xml</a>
+								</li>
+							</ul>
+						</div>
+						<div>
+							<b><label for="sm_location_usemanual"><input id="sm_location_usemanual" name="sm_b_location_mode" value="manual" type="radio"> Eigener Pfad</label></b>
+							<ul>
+								<li>
+									<label for="sm_b_filename_manual">
+										Absoluter oder relativer Pfad zur Sitemap Datei inkl. Dateinamen.<br>Beispiel: /var/www/htdocs/wordpress/sitemap.xml<br>
+										<input style="width: 70%;" id="sm_b_filename_manual" name="sm_b_filename_manual" value="/www/htdocs/w009f795/projekte/mitspargelegenheit/sitemap.xml" type="text">
+									</label>
+								</li>
+								<li>
+									<label for="sm_b_fileurl_manual">
+										Absolute URL zur Sitemap Datei inkl. Dateinamen.<br>Beispiel: http://www.yourdomain.com/sitemap.xml<br>
+										<input style="width: 70%;" id="sm_b_fileurl_manual" name="sm_b_fileurl_manual" value="http://mitspargelegenheit.de/sitemap.xml" type="text">
+									</label>
+								</li>
+							</ul>
+						</div>
+						
+									</div>
+			</div>
+								
+					<!-- Includes -->
+								<div id="sm_includes" class="postbox">
+				<h3 class="hndle"><span>Inhalt der Sitemap</span></h3>
+				<div class="inside">
+								
+						<ul>
+							<li>
+								<label for="sm_in_home">
+									<input id="sm_in_home" name="sm_in_home" type="checkbox">
+									Startseite								</label>
+							</li>
+							<li>
+								<label for="sm_in_posts">
+									<input id="sm_in_posts" name="sm_in_posts" checked="checked" type="checkbox">
+									Beiträge								</label>
+							</li>
+							<li>
+								<label for="sm_in_posts_sub">
+									<input id="sm_in_posts_sub" name="sm_in_posts_sub" type="checkbox">
+									Folgeseiten von Beiträgen  (Erhöht Erstelldauer und Speicherverbrauch)								</label>
+							</li>
+							<li>
+								<label for="sm_in_pages">
+									<input id="sm_in_pages" name="sm_in_pages" type="checkbox">
+									Statische Seiten								</label>
+							</li>
+							<li>
+								<label for="sm_in_cats">
+									<input id="sm_in_cats" name="sm_in_cats" type="checkbox">
+									Kategorien								</label>
+							</li>
+							<li>
+								<label for="sm_in_arch">
+									<input id="sm_in_arch" name="sm_in_arch" type="checkbox">
+									Archive								</label>
+							</li>
+														<li>
+								<label for="sm_in_tags">
+									<input id="sm_in_tags" name="sm_in_tags" type="checkbox">
+									Tag Seiten 								</label>
+							</li>
+																					<li>
+								<label for="sm_in_auth">
+									<input id="sm_in_auth" name="sm_in_auth" type="checkbox">
+									Autoren Seiten								</label>
+							</li>
+						</ul>
+						<b>Weitere Optionen:</b>
+						<ul>
+							<li>
+								<label for="sm_in_lastmod">
+									<input id="sm_in_lastmod" name="sm_in_lastmod" checked="checked" type="checkbox">
+									Letztes Änderungsdatum mit einbeziehen								</label><br>
+								<small>Dies ist äußerst empfohel und hilft den Suchmaschienen zu wissen wann Ihr Inhalt geändert wurde. Diese Einstellungen betrifft <i>alle</i> Einträge der Sitemap.</small>
+							</li>
+						</ul>
+						
+									</div>
+			</div>
+								
+					<!-- Excluded Items -->
+								<div id="sm_excludes" class="postbox">
+				<h3 class="hndle"><span>Seiten ausschließen</span></h3>
+				<div class="inside">
+								
+						<b>Kategorien ausschließen:</b>
+													<cite style="display: block; margin-left: 40px;">Hinweis: Die Verwendung dieser Funktion wird die Erstelldauer sowie den Speicherverbrauch erhöhen!</cite>
+							<div style="border: 2px solid rgb(206, 225, 239); margin: 5px 0px 5px 40px; padding: 0.5em; overflow: auto; height: 10em;">
+							<ul>
+								
+<li id="category-1" class="popular-category"><label class="selectit"><input value="1" name="post_category[]" id="in-category-1" checked="checked" type="checkbox"> Allgemein</label></li>
+
+<li id="category-4" class="popular-category"><label class="selectit"><input value="4" name="post_category[]" id="in-category-4" type="checkbox"> Banken</label></li>
+
+<li id="category-6"><label class="selectit"><input value="6" name="post_category[]" id="in-category-6" type="checkbox"> Internet/Telefon</label></li>
+
+<li id="category-8"><label class="selectit"><input value="8" name="post_category[]" id="in-category-8" type="checkbox"> Sonstige</label></li>
+
+<li id="category-5" class="popular-category"><label class="selectit"><input value="5" name="post_category[]" id="in-category-5" type="checkbox"> Versicherungen</label></li>
+
+<li id="category-7" class="popular-category"><label class="selectit"><input value="7" name="post_category[]" id="in-category-7" type="checkbox"> Zeitung/Zeitschriften</label></li>
+							</ul>
+							</div>
+												
+						<b>Beiträge ausschließen:</b>
+						<div style="margin: 5px 0pt 13px 40px;">
+							<label for="sm_b_exclude">Folgende Beiträge oder Seiten ausschließen: <small>Liste der IDs, getrennt mit Komma</small><br>
+							<input name="sm_b_exclude" id="sm_b_exclude" style="width: 400px;" type="text"></label><br>
+							<cite>Hinweis: Unterseiten werden nicht automatisch ausgeschlossen!</cite>
+						</div>
+						
+									</div>
+			</div>
+								
+					<!-- Change frequencies -->
+								<div id="sm_change_frequencies" class="postbox">
+				<h3 class="hndle"><span>Änderungsfrequenz</span></h3>
+				<div class="inside">
+			
+						<p>
+							<b>Hinweis:</b>
+Bitte beachten Sie dass diese Einstellung nur als Tipp und nicht als
+Kommando gesehen wird. Suchmaschinen könnten diesen Tipp beachten,
+müssen sich aber nicht daran halten. Sie können Seiten die als
+stündlich markiert wurden weniger häufig besuchen und Seiten die als
+niemals markiert wurden trotzdem überprüfen. </p>
+						<ul>
+							<li>
+								<label for="sm_cf_home">
+									<select id="sm_cf_home" name="sm_cf_home"><option value="always">Immer</option><option value="hourly">Stündlich</option><option value="daily" selected="selected">Täglich</option><option value="weekly">Wöchentlich</option><option value="monthly">Monatlich</option><option value="yearly">Jährlich</option><option value="never">Nie</option></select>
+									Startseite								</label>
+							</li>
+							<li>
+								<label for="sm_cf_posts">
+									<select id="sm_cf_posts" name="sm_cf_posts"><option value="always">Immer</option><option value="hourly">Stündlich</option><option value="daily" selected="selected">Täglich</option><option value="weekly">Wöchentlich</option><option value="monthly">Monatlich</option><option value="yearly">Jährlich</option><option value="never">Nie</option></select>
+									Beiträge								</label>
+							</li>
+							<li>
+								<label for="sm_cf_pages">
+									<select id="sm_cf_pages" name="sm_cf_pages"><option value="always">Immer</option><option value="hourly">Stündlich</option><option value="daily">Täglich</option><option value="weekly" selected="selected">Wöchentlich</option><option value="monthly">Monatlich</option><option value="yearly">Jährlich</option><option value="never">Nie</option></select>
+									Statische Seiten								</label>
+							</li>
+							<li>
+								<label for="sm_cf_cats">
+									<select id="sm_cf_cats" name="sm_cf_cats"><option value="always">Immer</option><option value="hourly">Stündlich</option><option value="daily">Täglich</option><option value="weekly" selected="selected">Wöchentlich</option><option value="monthly">Monatlich</option><option value="yearly">Jährlich</option><option value="never">Nie</option></select>
+									Kategorien								</label>
+							</li>
+							<li>
+								<label for="sm_cf_arch_curr">
+									<select id="sm_cf_arch_curr" name="sm_cf_arch_curr"><option value="always">Immer</option><option value="hourly">Stündlich</option><option value="daily" selected="selected">Täglich</option><option value="weekly">Wöchentlich</option><option value="monthly">Monatlich</option><option value="yearly">Jährlich</option><option value="never">Nie</option></select>
+									Das Archive des aktuellen Monats (Sollte den gleichen Wert haben wie Ihre Startseite)								</label>
+							</li>
+							<li>
+								<label for="sm_cf_arch_old">
+									<select id="sm_cf_arch_old" name="sm_cf_arch_old"><option value="always">Immer</option><option value="hourly">Stündlich</option><option value="daily">Täglich</option><option value="weekly">Wöchentlich</option><option value="monthly">Monatlich</option><option value="yearly" selected="selected">Jährlich</option><option value="never">Nie</option></select>
+									Archive der vergangenen Monate								</label>
+							</li>
+														<li>
+								<label for="sm_cf_tags">
+									<select id="sm_cf_tags" name="sm_cf_tags"><option value="always">Immer</option><option value="hourly">Stündlich</option><option value="daily">Täglich</option><option value="weekly" selected="selected">Wöchentlich</option><option value="monthly">Monatlich</option><option value="yearly">Jährlich</option><option value="never">Nie</option></select>
+									Tag Seiten								</label>
+							</li>
+														<li>
+								<label for="sm_cf_auth">
+									<select id="sm_cf_auth" name="sm_cf_auth"><option value="always">Immer</option><option value="hourly">Stündlich</option><option value="daily">Täglich</option><option value="weekly" selected="selected">Wöchentlich</option><option value="monthly">Monatlich</option><option value="yearly">Jährlich</option><option value="never">Nie</option></select>
+									Autoren Seiten								</label>
+							</li>
+						</ul>
+						
+									</div>
+			</div>
+								
+					<!-- Priorities -->
+								<div id="sm_priorities" class="postbox">
+				<h3 class="hndle"><span>Prioritäten</span></h3>
+				<div class="inside">
+									<ul>
+							<li>
+								<label for="sm_pr_home">
+									<select id="sm_pr_home" name="sm_pr_home"><option value="0.0">0.0</option><option value="0.1">0.1</option><option value="0.2">0.2</option><option value="0.3">0.3</option><option value="0.4">0.4</option><option value="0.5">0.5</option><option value="0.6">0.6</option><option value="0.7">0.7</option><option value="0.8">0.8</option><option value="0.9">0.9</option><option value="1.0" selected="selected">1.0</option></select>
+									Startseite								</label>
+							</li>
+							<li>
+								<label for="sm_pr_posts">
+									<select id="sm_pr_posts" name="sm_pr_posts"><option value="0.0">0.0</option><option value="0.1">0.1</option><option value="0.2">0.2</option><option value="0.3">0.3</option><option value="0.4">0.4</option><option value="0.5">0.5</option><option value="0.6">0.6</option><option value="0.7">0.7</option><option value="0.8">0.8</option><option value="0.9">0.9</option><option value="1.0" selected="selected">1.0</option></select>
+									Beiträge (wenn automatische Berechnung deaktiviert wurde)								</label>
+							</li>
+							<li>
+								<label for="sm_pr_posts_min">
+									<select id="sm_pr_posts_min" name="sm_pr_posts_min"><option value="0.0">0.0</option><option value="0.1">0.1</option><option value="0.2" selected="selected">0.2</option><option value="0.3">0.3</option><option value="0.4">0.4</option><option value="0.5">0.5</option><option value="0.6">0.6</option><option value="0.7">0.7</option><option value="0.8">0.8</option><option value="0.9">0.9</option><option value="1.0">1.0</option></select>
+									Minimale Priorität für Beiträge (auch wenn automatische Berechnung aktiviert wurde)								</label>
+							</li>
+							<li>
+								<label for="sm_pr_pages">
+									<select id="sm_pr_pages" name="sm_pr_pages"><option value="0.0">0.0</option><option value="0.1">0.1</option><option value="0.2">0.2</option><option value="0.3">0.3</option><option value="0.4">0.4</option><option value="0.5">0.5</option><option value="0.6" selected="selected">0.6</option><option value="0.7">0.7</option><option value="0.8">0.8</option><option value="0.9">0.9</option><option value="1.0">1.0</option></select>
+									Statische Seiten								</label>
+							</li>
+							<li>
+								<label for="sm_pr_cats">
+									<select id="sm_pr_cats" name="sm_pr_cats"><option value="0.0">0.0</option><option value="0.1">0.1</option><option value="0.2">0.2</option><option value="0.3" selected="selected">0.3</option><option value="0.4">0.4</option><option value="0.5">0.5</option><option value="0.6">0.6</option><option value="0.7">0.7</option><option value="0.8">0.8</option><option value="0.9">0.9</option><option value="1.0">1.0</option></select>
+									Kategorien								</label>
+							</li>
+							<li>
+								<label for="sm_pr_arch">
+									<select id="sm_pr_arch" name="sm_pr_arch"><option value="0.0">0.0</option><option value="0.1">0.1</option><option value="0.2">0.2</option><option value="0.3" selected="selected">0.3</option><option value="0.4">0.4</option><option value="0.5">0.5</option><option value="0.6">0.6</option><option value="0.7">0.7</option><option value="0.8">0.8</option><option value="0.9">0.9</option><option value="1.0">1.0</option></select>
+									Archive								</label>
+							</li>
+														<li>
+								<label for="sm_pr_tags">
+									<select id="sm_pr_tags" name="sm_pr_tags"><option value="0.0">0.0</option><option value="0.1">0.1</option><option value="0.2">0.2</option><option value="0.3" selected="selected">0.3</option><option value="0.4">0.4</option><option value="0.5">0.5</option><option value="0.6">0.6</option><option value="0.7">0.7</option><option value="0.8">0.8</option><option value="0.9">0.9</option><option value="1.0">1.0</option></select>
+									Tag Seiten								</label>
+							</li>
+														<li>
+								<label for="sm_pr_auth">
+									<select id="sm_pr_auth" name="sm_pr_auth"><option value="0.0">0.0</option><option value="0.1">0.1</option><option value="0.2">0.2</option><option value="0.3" selected="selected">0.3</option><option value="0.4">0.4</option><option value="0.5">0.5</option><option value="0.6">0.6</option><option value="0.7">0.7</option><option value="0.8">0.8</option><option value="0.9">0.9</option><option value="1.0">1.0</option></select>
+									Autoren Seiten								</label>
+							</li>
+						</ul>
+						
+									</div>
+			</div>
+								
+					</div>
+					<div>
+						<p class="submit">
+							<input id="_wpnonce" name="_wpnonce" value="ec85b82526" type="hidden"><input name="_wp_http_referer" value="/projekte/mitspargelegenheit/wp-admin/options-general.php?page=google-sitemap-generator/sitemap.php&amp;sm_wpv=2.9&amp;sm_pv=3.2.2&amp;sm_hide_works=true" type="hidden">							<input name="sm_update" value="Änderungen speichern" type="submit">
+							<input onclick='return confirm("Do you really want to reset your configuration?");' class="sm_warning" name="sm_reset_config" value="Einstellungen zurücksetzten" type="submit">
+						</p>
+					</div>
+				
+								</div>
+				</div>
+								</div>
+				<script type="text/javascript">if(typeof(sm_loadPages)=='function') addLoadEvent(sm_loadPages); </script>
+			</form>
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="sm_donate_form">
+								<input name="cmd" value="_xclick" type="hidden">
+				<input name="business" value="donate@arnebrachhold.de" type="hidden">
+				<input name="item_name" value="Sitemap Generator for WordPress. Please tell me if if you don't want to be listed on the donator list." type="hidden">
+				<input name="no_shipping" value="1" type="hidden">
+				<input name="return" value="http://mitspargelegenheit.dehttp://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/options-general.php?page=google-sitemap-generator/sitemap.php&amp;sm_wpv=2.9&amp;sm_pv=3.2.2&amp;sm_donated=true" type="hidden">
+				<input name="item_number" value="0001" type="hidden">
+				<input name="currency_code" value="EUR" type="hidden">
+				<input name="bn" value="PP-BuyNowBF" type="hidden">
+				<input name="lc" value="DE" type="hidden">
+				<input name="rm" value="2" type="hidden">
+				<input name="on0" value="Your Website" type="hidden">
+				<input name="os0" value="http://mitspargelegenheit.de" type="hidden">
+			</form>
+		</div>
+		
+<div class="clear"></div></div><!-- wpbody-content -->
+<div class="clear"></div></div><!-- wpbody -->
+<div class="clear"></div></div><!-- wpcontent -->
+</div><!-- wpwrap -->
+
+<div id="footer">
+<p id="footer-left" class="alignleft"><span id="footer-thankyou">Danke, dass du <a href="http://wordpress.org/">WordPress</a> benutzt. | <a href="http://wordpress-deutschland.org/">WordPress Deutschland</a> </span> | <a href="http://doku.wordpress-deutschland.org/">Dokumentation</a> (<a href="http://codex.wordpress.org/">en</a>) | <a href="http://forum.wordpress-deutschland.org/feedback-und-ankuendigungen/">Feedback</a> (<a href="http://wordpress.org/support/forum/4">en</a>) | Memory : 24.81 of 65 MByte</p>
+<p id="footer-upgrade" class="alignright"><strong><a href="http://mitspargelegenheit.de/projekte/mitspargelegenheit/wp-admin/update-core.php">Version 2.9.2 herunterladen</a></strong></p>
+<div class="clear"></div>
+</div>
+<script type="text/javascript">
+/* <![CDATA[ */
+var commonL10n = {
+	warnDelete: "Du bist dabei die ausgewählten Punkte endültig zu löschen. Drücke \'Abbrechen\' zum stoppen, oder \'OK\' zum löschen."
+};
+try{convertEntities(commonL10n);}catch(e){};
+/* ]]> */
+</script>
+<script type="text/javascript" src="options-general.php-Dateien/load-scripts.js"></script>
+
+<script type="text/javascript">if(typeof wpOnload=='function')wpOnload();</script>
+</body></html>

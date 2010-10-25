@@ -1,0 +1,37 @@
+/* Styling for Playlist */
+#playlist
+{
+	font-size: 12px;
+	width: 100%;
+	text-align: left;
+	border-collapse: collapse;
+	border: 1px solid #69c;
+	margin: 5px 0 15px 0;
+}
+#playlist th
+{
+	padding: 15px 10px 10px 10px;
+	font-weight: normal;  
+	font-size: 14px;
+	color: #666;
+}
+#playlist tbody
+{
+	background: #eee;
+ 
+}
+#playlist td
+{
+	padding: 10px;
+	color: #333;
+	border-top: 1px dashed #fff;  
+	text-align: left;     	
+
+}
+#playlist tbody tr:hover td
+{
+	color: #111;
+	background: #bbb;  	
+}
+
+   

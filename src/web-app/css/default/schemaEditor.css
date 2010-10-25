@@ -1,0 +1,188 @@
+/* 
+    Document   : schemaEditor
+    Created on : 17.03.2010, 18:27:33
+    Author     : Sebastian
+    Description:
+        Purpose of the stylesheet follows.
+*/ /*SchemaEditor
+*/
+
+
+#treeBox {
+	
+	display: block;
+	float: left;
+	
+	overflow: auto;
+	border: 1px solid #999999;
+	min-height:400px;
+	_height: 400px;	
+	_width: 232px;
+	width: 232px;
+	padding-left: 7px;
+	
+
+}
+
+#treeOuterBox {
+	margin-top:37px;
+	_width: 232px;
+	width: 232px;
+	float: left;
+	min-height:400px;
+	_height: 400px;	
+}
+
+#detailsBox {
+	display: block;
+	float: left;
+	width: 542px;
+	_width: 542px;
+	padding-left: 15px;
+	padding-right: 30px;
+}
+
+
+#option {
+	
+	padding-top: 20px;
+	padding-bottom: 15px;
+	padding-left: 15px;
+	padding-right: 15px;	
+	width: 510px;
+	_width: 510px;
+	border: 1px solid #999999;
+	
+}
+
+
+
+/*links*/
+a:link {
+	color: #0070D5;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #0070D5;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #0070D5;
+	text-decoration: underline;
+}
+
+a:active {
+	color: #0070D5;
+	text-decoration: underline;
+}
+
+/*Tree-links*/
+a.tree:link {
+	color: #0070D5;
+	text-decoration: none;
+}
+
+a.tree:visited {
+	color: #0070D5;
+	text-decoration: none;
+}
+
+a.tree:hover {
+	color: #0070D5;
+	text-decoration: underline;
+	background-color: #D5EBFF;
+}
+
+a.tree:active {
+	color: #0070D5;
+	text-decoration: underline;
+}
+
+/*TableHead-links*/
+a.thead:link {
+	color: white;
+	text-decoration: none;
+}
+
+a.thead:visited {
+	color: white;
+	text-decoration: none;
+}
+
+a.thead:hover {
+	color: white;
+	text-decoration: underline;
+	
+}
+
+a.thead:active {
+	color: white;
+	text-decoration: underline;
+}
+
+h7 {
+	font-size: 16pt;
+	font-weight: bold;
+	color:#3C4549;	
+	
+	 white-space: pre-wrap;      /* CSS3 */   
+   white-space: -moz-pre-wrap; /* Firefox */    
+   white-space: -pre-wrap;     /* Opera <7 */   
+   white-space: -o-pre-wrap;   /* Opera 7 */    
+   word-wrap: break-word;      /* IE */
+	
+}
+
+h8 {
+	font-size: 12pt;
+	font-weight: bold;
+	color:#3C4549;	
+	
+	 white-space: pre-wrap;      /* CSS3 */   
+   white-space: -moz-pre-wrap; /* Firefox */    
+   white-space: -pre-wrap;     /* Opera <7 */   
+   white-space: -o-pre-wrap;   /* Opera 7 */    
+   word-wrap: break-word;      /* IE */
+	
+}
+
+#topichead {
+	display: block;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 15px;
+	margin-top: 30px;
+}
+
+
+#layerMenu {
+	margin-top: 00px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: right;
+	border: 1px solid #999999;
+}
+
+table.option {
+	table-layout: fixed;
+	width: 505px;
+	_width: 505px;
+	word-wrap: break-word;
+
+}
+
+thead.tablehead{
+	
+	background-color:#8ABADA;
+
+}
+
+ul.treeUL {
+	list-style-image: url(../../images/schemaEditor/page.png);
+}
+
+#treeLI {
+	list-style-image: url(../../images/schemaEditor/page.png);
+}

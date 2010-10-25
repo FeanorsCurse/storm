@@ -1,0 +1,52 @@
+.searchcontainer ul, .searchcontainer li {
+	padding: 0;
+	margin: 0;
+}
+
+#statesmod {
+	position:relative;
+}
+
+.searchcontainer {
+	position:relative;
+	top:0.1em;
+}
+
+.searchcontainer .yui-ac-content {
+	position:absolute;
+	width:300px;
+	border:1px solid #98d15c;
+	background:#eee;
+	overflow:hidden;
+	z-index:9050;
+}
+
+.searchcontainer .yui-ac-shadow {
+	position:absolute;
+	margin:0.3em;
+	width:300px;
+	background:#a0a0a0;
+	z-index:9049;
+}
+
+.searchcontainer ul {
+	padding:5px 0;
+	width:300px;
+	list-style-type:none;
+	text-align:left;
+}
+
+.searchcontainer li {
+	padding:0 5px;
+	cursor:default;
+	white-space:nowrap;
+	color:#1111CC;
+}
+
+.searchcontainer li:hover {
+	color:#254117;
+	text-decoration:underline;
+}
+
+.searchcontainer li.yui-ac-highlight, .searchcontainer li.yui-ac-prehighlight {
+}

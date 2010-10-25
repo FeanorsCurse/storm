@@ -1,0 +1,6 @@
+-main FOggPlayer
+-debug
+-swf-lib Resource.swf
+-swf-version 10
+-swf-header 400:800:12:ffffff
+-swf9 FOggPlayer.swf

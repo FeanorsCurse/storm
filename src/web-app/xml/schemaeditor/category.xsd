@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="www.storm.uni-oldenburg.de"
+    targetNamespace="www.storm.uni-oldenburg.de">
+
+    <xs:element name="category" type="category"/>
+    <xs:complexType name="category">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element minOccurs="0" name="description" type="xs:string"/>
+            <xs:element form="unqualified" minOccurs="0" name="source" type="xs:anyURI"/>
+        </xs:sequence>
+        <xs:attribute name="creationDate" type="xs:date"/>
+        <xs:attribute name="lastModified" type="xs:date"/>
+    </xs:complexType>
+</xs:schema>

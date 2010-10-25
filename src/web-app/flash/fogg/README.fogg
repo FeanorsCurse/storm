@@ -1,0 +1,31 @@
+Build
+-----
+
+The FVorbis library makes quite a heavy use of the new Vector type to
+appear in Flash Player 10. To build the libraries and the example you
+will need haXe compiler version 2.01 or newer.
+
+Make sure haxe is installed in a standard location or that it can find
+its std lib (using HAXE_LIBRARY_PATH or '-cp' switches).
+
+In the fogg checkout dir run:
+
+    $ haxe -cp . build.hxml
+
+That should build the .swf file, which you can open with a
+browser+flashplugin or a standalone flashplayer.
+
+
+Use
+---
+
+You will need the latest version possible of the Flash plugin/player
+verion 10 (at least 10.0.0.525). Open the generated .swf file with
+your web browser or the standalone flash player.
+
+By default the example player will look for 'interlude1.ogg' file in
+the same directory as the .swf file. You can specify a different file
+using playUrl flashvar. If your accessing the .swf file through a web
+server you can pass that parameter as a GET request argument:
+
+    http://localhost/~me/fogg/foe1.swf?playUrl=my_favorite.ogg

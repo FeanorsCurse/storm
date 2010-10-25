@@ -1,0 +1,83 @@
+			FOggPlayer
+			==========
+
+This is a simple Ogg Vorbis player written in HaXe, a new object
+oriented language aimed at scripting languages like ActionScript,
+JavaScript etc. See http://haxe.org. The Ogg Vorbis decoder is the
+soundapi branch of FOgg, from https://launchpad.net/fogg. It also uses
+swfmill to build an embedded font resource. See http://swfmill.org.
+
+Files
+=====
+ArrayTools.hx		- Part of fogg
+build.bat		- Build file for windoze
+build.sh		- Build file for linux
+Changes			- Changes file
+COPYING			- Gnu copyleft
+FOggPlayer.hx		- Player source file
+FOggPlayer.hxml		- Player build file
+FOggPlayer.swf		- Flash application
+Makefile		- Makefile
+org/			- FOgg library files
+README			- This file
+README.fogg		- FOgg README
+Resource.swf		- Resource library
+Resource.xml		- Resource XML source
+silkscreen.zip		- Silkscreen font
+slkscr.ttf		- Silkscreen font file
+System.hx		- Part of fogg
+TODO.fogg		- FOgg TODO
+VectorTools.hx		- Part of fogg
+
+Building
+========
+You can either use the build files, build.bat or build.sh, or use gnu
+make with the Makefile.
+
+Using
+=====
+There are three buttons, the title field, and a volume control.  The
+buttons operate in the usual way, except that clicking the play button
+(|>) while a file is playing will restart from the last pause
+position, or the beginning if the pause button (||) or the title
+hasn't been clicked. Clicking the stop button ([]) will stop the
+playing, and reset the pause position.
+
+Clicking on the title field will stop the playing and set a new pause
+position.
+
+Clicking on the volume control will set the volume in proportion to
+where it is clicked.
+
+HTML
+====
+The minimum necessary html code is:
+
+<object
+   type="application/x-shockwave-flash"
+   data="FOggPlayer.swf?url=http://...&title=...&colour=..."
+   width="350"
+   height="21">
+  <param
+     name="movie"
+     value="FOggPlayer.swf?url=http://...&title=...&colour=..." />
+</object>
+
+Parameters
+==========
+url	- URL of mp3 file
+title	- Title of mp3 file
+color	- Colour for progress bar (optional)
+colour	- Alternate spelling for color
+
+Colours
+=======
+Colour can be one of: red green blue cyan yellow magenta, or two hex
+numbers separated by a comma, like this: #ffffff,#bbbbbb.
+
+The first value sets the colour of the top of the progress bar, the
+second sets the bottom, with a gradient between.  To retain the 3D
+effect the second colour needs to be darker than the first.
+
+The progress bar colour defaults to cyan, if not defined, or there is
+an error in the parameter.

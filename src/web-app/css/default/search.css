@@ -1,0 +1,32 @@
+#header_search {
+	position:absolute;
+	right:0px;
+	height:37px;
+	bottom:27px;
+	background-image:url(../../images/header_search.png);
+	background-repeat:no-repeat;
+	background-position:left;
+	float:left;
+	width:351px;
+	text-align:right;
+}
+
+#header_searchtext {
+	margin-left:25px;
+	margin-right:2px;
+	margin-top:8px;
+	float:right;
+	width:35%;
+}
+
+#header_search_submit {
+	margin-right:5px;
+	float:right;
+	margin-top:7px;
+}
+
+#header_search_select {
+	margin-right:5px;
+	margin-top:8px;
+	float:right;
+}

@@ -1,0 +1,11 @@
+<plugin name='google-chart' version='0.5.1' grailsVersion='1.1.1 &gt; *'>
+  <author>James Williams</author>
+  <authorEmail>jwill@codehaus.org</authorEmail>
+  <title>This plugin adds Google Chart API features to Grails applications.</title>
+  <documentation>http://grails.codehaus.org/Google+Chart+Plugin</documentation>
+  <resources>
+    <resource>GoogleChartTagLib</resource>
+    <resource>UrlMappings</resource>
+  </resources>
+  <dependencies />
+</plugin>
